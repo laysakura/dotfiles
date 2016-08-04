@@ -48,7 +48,7 @@ function run() {
     . $supportDir/function.sh
 
     # dotfiles-secretをdotfilesにマージ
-    gitCopy $dotfilesSecretDir $dotfilesDir
+    gitCopy $dotfilesSecretDir $dotfilesDir HEAD
 
     # 設定ファイルの配置
     . $supportDir/installDotfiles.sh
