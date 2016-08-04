@@ -1,6 +1,6 @@
 #!/bin/bash -xeu
 
-# TODO install-min/ とかに入れてsourceする
+# 設定
 declare -A SITE_URL=(
     [bitbucket]='bitbucket.org'
     [github]='github.com'
@@ -21,13 +21,14 @@ declare -A REPO_DOTFILES=(
     [name]='laysakura/dotfiles'
 )
 
-
+# dotfilesリポジトリをcloneするまでに使用する最低限の関数定義
 function repoUrl() {
     local repoSite=$1
     local repoName=$2
     echo -n "https://${SITE_USER[$repoSite]}@${SITE_URL[$repoSite]}/$repoName.git"
 }
 
+# インストール実行
 function run() {
     local tmpdir=`mktemp -d`
 
@@ -38,13 +39,21 @@ function run() {
     # ローカルに存在していなかったら、publicリポジトリから dotfilesを 一時的にclone
     # TODO ローカルにあったらそれを使う
     git clone $(repoUrl ${REPO_DOTFILES[site]} ${REPO_DOTFILES[name]}) "$tmpdir/${REPO_DOTFILES[name]}"
+
+    # 補助スクリプトが手に入ったのでsource
+    local support_dir="$tmpdir/${REPO_DOTFILES[name]}/install-support"
+    . "$support_dir/function.sh"
+
+    ostype
+
+    # 各ソフトの設定をばらまく
+
+    # 最低限のシェル関数を定義し、zshやほかのソフトをインストール
 }
 run
 
 
-# 最低限のシェル関数を定義し、zshやほかのソフトをインストール
 
-# 各ソフトの設定をばらまく
 
 # ログインシェルをzshに変更する
 # => zshrcが読み込まれるが、その最初の最初で必要ソフトのインストールを走らせる
