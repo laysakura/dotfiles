@@ -1,0 +1,7 @@
+[global]
+device = gpu
+floatX = float32
+
+[nvcc]
+compiler_bindir=/usr/local/cuda/bin
+fastmath = True

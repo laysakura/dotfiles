@@ -1,47 +1,42 @@
 export basedir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/..
 
 # ssh
+mkdir -p $HOME/.ssh/
 cp -f $basedir/.ssh/config $HOME/.ssh/
 cp -f $basedir/.ssh/id_* $HOME/.ssh/
+chmod 600 $HOME/.ssh/*
+
+# zsh
+cp -f $basedir/.zshrc $HOME/
+cp -rf $basedir/.zsh $HOME/
+
+# emacs
+gitCopy $basedir $HOME HEAD:emacs  # el-getのキャッシュは残しつつ、リポジトリの内容をコピー
+
+# tmux
+cp -f $basedir/.tmux.conf $HOME/
+
+# mintty
+cp -f $basedir/.minttyrc $HOME/
+
+# git
+cp -f $basedir/git/.gitconfig $HOME/
+cp -f $basedir/git/.gitignore $HOME/
 
 # ghq
-## MSYS2のghqで /home が \home になって、 /c/home を参照しに行ってしまう問題のworkaround
-is_msys && cmd /c "mklink /j C:\home C:\msys64\home"
+is_msys && cmd /c "mklink /j C:\home C:\msys64\home"  # MSYS2のghqで /home が \home になって、/c/home を参照しに行ってしまう問題のworkaround
+mkdir -p $HOME/.ghq
 
+# ruby
+cp -f $basedir/.pryrc $HOME/
 
+# python
+cp -f $basedir/.pypirc $HOME/
+cp -f $basedir/.theanorc $HOME/
+cp -r $basedir/.matplotlib $HOME/
 
-# mkdir -p $HOME/local/bin
-# mkdir -p $HOME/local/etc/profile.d
-# mkdir -p $HOME/.ssh
-# mkdir -p $HOME/.ghq
-# mkdir -p $HOME/.matplotlib
-# cp -f $basedir/mintty/.minttyrc  $HOME/
-# cp -f $basedir/zsh/.zshrc        $HOME/
-# cp -rf $basedir/zsh/.zsh         $HOME/
-# cp -f $basedir/bash/.bash_profile    $HOME/
-# cp -f $basedir/bash/.bashrc*     $HOME/
-# cp -f $basedir/git/.gitconfig    $HOME/
-# cp -f $basedir/git/diff-highlight    $HOME/local/bin/
-# cp -f $basedir/tmux/.tmux.conf   $HOME/
-# cp -f $basedir/screen/.screenrc  $HOME/
-# cp -f $basedir/ssh/*             $HOME/.ssh/
-# cp -f $basedir/gdb/.gdbinit      $HOME/
-# chmod 600 $HOME/.ssh/*
-# cp -f $basedir/X/.Xmodmap        $HOME/
-# cp -f $basedir/ruby/.pryrc       $HOME/
-# cp -f $basedir/perl/.pause       $HOME/
-# cp -f $basedir/perl/.replyrc     $HOME/
-# cp -f $basedir/python/pyflakes-with-pep8     $HOME/local/bin/
-# cp -f $basedir/python/pyflakes-with-pep8-py3 $HOME/local/bin/
-# cp -f $basedir/python/.pypirc    $HOME/
-# cp -f $basedir/python/.theanorc  $HOME/
-# cp -f $basedir/node/.npmrc       $HOME/
-# cp -f $basedir/less/.lesskey     $HOME/ ; lesskey
-# cp -f $basedir/bash-completion/* $HOME/local/etc/profile.d/
-# cp -f $basedir/matplotlib/matplotlibrc       $HOME/.matplotlib/
-# cp -f $basedir/octave/.octaverc  $HOME/
-# cp -f $basedir/jars/*.jar        /usr/local/jars/
-# cp -f $basedir/jars/plantuml.jar $HOME/
+# octave
+cp -f $basedir/.octaverc $HOME/
 
-# # el-getのキャッシュは残しつつ、リポジトリの内容をコピー
-# gitCopy $basedir $dotfiles_dir HEAD:emacs
+# gdb
+cp -f $basedir/.gdbinit $HOME/
