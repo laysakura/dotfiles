@@ -15,6 +15,11 @@ function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
 function is_msys() { [[ `ostype` == msys* ]]; }
 
+# シェル
+function isExist() { type "$1" >/dev/null 2>&1; return $?; }
+function isInteractiveShell() { [ ! -z "$PS1" ]; }
+function isSshRunning() { [ ! -z "$SSH_CONECTION" ]; }
+
 # git操作
 ## git管理されているファイルを丸っとコピー
 function gitCopy() {

@@ -5,7 +5,7 @@ function is_screen_or_tmux_running() { is_screen_running || is_tmux_runnning; }
 function tmux_automatically_attach_session()
 {
     if is_screen_or_tmux_running; then
-        ! is_exists 'tmux' && return 1
+        ! isExist 'tmux' && return 1
 
         if is_tmux_runnning; then
             echo "${fg_bold[red]} _____ __  __ _   ___  __ ${reset_color}"
@@ -17,8 +17,8 @@ function tmux_automatically_attach_session()
             echo "This is on screen."
         fi
     else
-        if shell_has_started_interactively && ! is_ssh_running; then
-            if ! is_exists 'tmux'; then
+        if isInteractiveShell && ! isSshRunning; then
+            if ! isExist 'tmux'; then
                 echo 'Error: tmux command not found' 2>&1
                 return 1
             fi
@@ -43,7 +43,7 @@ function tmux_automatically_attach_session()
                 fi
             fi
 
-            if is_osx && is_exists 'reattach-to-user-namespace'; then
+            if is_osx && isExist 'reattach-to-user-namespace'; then
                 # on OS X force tmux's default command
                 # to spawn a shell in the user's namespace
                 tmux_config=$(cat $HOME/.tmux.conf <(echo 'set-option -g default-command "reattach-to-user-namespace -l $SHELL"'))
