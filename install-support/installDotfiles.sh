@@ -20,8 +20,8 @@ cp -f $basedir/.tmux.conf $HOME/
 cp -f $basedir/.minttyrc $HOME/
 
 # git
-cp -f $basedir/git/.gitconfig $HOME/
-cp -f $basedir/git/.gitignore $HOME/
+cp -f $basedir/.gitconfig $HOME/
+cp -f $basedir/.gitignore $HOME/
 
 # ghq
 is_msys && cmd /c "mklink /j C:\home C:\msys64\home"  # MSYS2のghqで /home が \home になって、/c/home を参照しに行ってしまう問題のworkaround
