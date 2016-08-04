@@ -36,11 +36,13 @@ function run() {
 
     # ローカルに存在していなかったら、publicリポジトリから dotfilesを 一時的にclone
     # TODO ローカルにあったらそれを使う
-    git clone $(repoUrl ${REPO_DOTFILES[site]} ${REPO_DOTFILES[name]}) $dotfilesDir
+    # git clone $(repoUrl ${REPO_DOTFILES[site]} ${REPO_DOTFILES[name]}) $dotfilesDir
+    mkdir -p $dotfilesDir ; rmdir $dotfilesDir ; cp -r ../dotfiles $dotfilesDir # TODO 消す
 
     # ローカルに存在していなかったら、privateリポジトリから dotfiles-secret を一時的にclone
     # TODO ローカルにあったらそれを使う
-    git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) $dotfilesSecretDir
+    # git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) $dotfilesSecretDir
+    mkdir -p $dotfilesSecretDir ; rmdir $dotfilesSecretDir ; cp -r ../dotfiles-secret $dotfilesSecretDir # TODO 消す
 
     # 補助スクリプトが手に入ったのでsourceしていく
     local supportDir=$tmpdir/${REPO_DOTFILES[name]}/install-support

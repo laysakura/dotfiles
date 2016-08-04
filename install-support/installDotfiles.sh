@@ -1,4 +1,4 @@
-export basedir=$(cd $(dirname $0); pwd)
+export basedir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/..
 
 # ssh
 cp -f $basedir/.ssh/config $HOME/.ssh/
