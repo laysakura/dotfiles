@@ -34,7 +34,7 @@ function run() {
 
     # ローカルに存在していなかったら、privateリポジトリから dotfiles-secret を一時的にclone
     # TODO ローカルにあったらそれを使う
-    git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) "$tmpdir/${REPO_DOTFILES_SECRET[name]}"
+    # git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) "$tmpdir/${REPO_DOTFILES_SECRET[name]}"
 
     # ローカルに存在していなかったら、publicリポジトリから dotfilesを 一時的にclone
     # TODO ローカルにあったらそれを使う

@@ -1,9 +1,9 @@
 # 文字列操作
 function downcase() {
-    echo "$1" |tr "[:upper:]" "[:lower:]"
+    tr "[:upper:]" "[:lower:]"
 }
 function upcase() {
-    echo "$1" |tr "[:lower:]" "[:upper:]"
+    tr "[:lower:]" "[:upper:]"
 }
 
 # OS判定
