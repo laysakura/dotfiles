@@ -1,6 +1,11 @@
 #!/bin/bash -xeu
 
 # 設定
+declare -a DEPENDENCIES=(
+    'git'
+    'ruby'
+)
+
 declare -A SITE_URL=(
     [bitbucket]='bitbucket.org'
     [github]='github.com'

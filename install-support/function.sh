@@ -32,12 +32,26 @@ function has() {
 function isInteractiveShell() { [ ! -z "$PS1" ]; }
 function isSshRunning() { [ ! -z "$SSH_CONECTION" ]; }
 
-## ディレクトリやシンボリックリンク実体化を含め上書きコピー
-function cpDeep() { cp -rfH $* ; }
-
 function die() {
     logError "$1" 1>&2
     exit ${2:-1}
+}
+
+## ディレクトリやシンボリックリンク実体化を含め上書きコピー
+function cpDeep() { cp -rfH $* ; }
+
+## アーカイブファイルの展開
+function extract() {
+    local srcArchive=$1
+    local destDir=$2
+    (
+        cd $destDir
+        if [[ $srcArchive == *.tar.gz ]]; then
+            tar xf $srcArchive
+        elif [[ $srcArchive == *.zip ]]; then
+            unzip $srcArchive
+        fi
+    )
 }
 
 # git操作

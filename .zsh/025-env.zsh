@@ -1,3 +1,7 @@
+# HOME PATH
+mkdir -p $HOME/.bin
+export PATH=$HOME/.bin:$PATH
+
 # homebrew
 export PATH=$BREWPATH/bin:$PATH
 export MANPATH=$BREWPATH/share/man:$MANPATH
