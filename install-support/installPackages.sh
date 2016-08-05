@@ -12,13 +12,13 @@ function sourcePath() {
 }
 
 function installNonRootPackageManager() {
-    if [ is_linux ]; then
+    if is_linux; then
         logWarn "linuxbrew has a problem with 'brew install pkg-config' so I stopped using it ..."
         # if ! has brew; then
         #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
         # fi
         # brew update
-    elif [ is_msys ]; then
+    elif is_msys; then
         has pacman || die "MSYS2 is supposed to have pacman"
     else
         die "Cannot detect `ostype`'s package manager"
@@ -28,10 +28,10 @@ function installNonRootPackageManager() {
 function installPackage() {
     local package=$1
 
-    if [ is_linux ]; then
+    if is_linux; then
         logWarn "Suggestion: sudo apt install $package"
         # brew install $package
-    elif [ is_msys ]; then
+    elif is_msys; then
         pacman -S $package
     else
         die "Cannot detect `ostype`'s package manager"
