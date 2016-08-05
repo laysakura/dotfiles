@@ -86,6 +86,9 @@ function runInstallPackages() {
     # zsh
     has zsh || installPackage zsh
 
+    # zplug
+    has zplug || (curl -sL zplug.sh/installer |zsh)
+
     # tmux
     has tmux || installPackage tmux
 
