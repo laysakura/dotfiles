@@ -4,11 +4,7 @@
 
 function suggestDependencies() {
     for d in ${DEPENDENCIES[@]}; do
-        has $d || logError <<EOF
-Missing command: $d
-    Following commands are required before dotfiles' installation.
-        ${DEPENDENCIES[@]}
-EOF
+        has $d || die "Missing command $d: Following commands are required before dotfiles' installation - ${DEPENDENCIES[@]}"
     done
 }
 
