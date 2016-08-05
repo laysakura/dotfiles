@@ -52,25 +52,33 @@ function die() {
 # インストール実行
 function run() {
     local tmpdir=`mktemp -d`
-    local dotfilesDir=$tmpdir/${REPO_DOTFILES[name]}
-    local dotfilesSecretDir=$tmpdir/${REPO_DOTFILES_SECRET[name]}
 
     has git || die "You must have git command"
 
-    # ローカルに存在していなかったら、publicリポジトリから dotfilesを 一時的にclone
-    # TODO ローカルにあったらそれを使う
-    logInfo "Cloning ${REPO_DOTFILES[name]} ..."
-    # git clone $(repoUrl ${REPO_DOTFILES[site]} ${REPO_DOTFILES[name]}) $dotfilesDir
-    mkdir -p $dotfilesDir ; rmdir $dotfilesDir ; cp -r ../dotfiles $dotfilesDir # TODO 消す
+    # dotfilesリポジトリを探す
+    # ローカルに存在していてghq管理されていたらそれを使う
+    local localDotfilesRepo=`has ghq &&  ghq list --full-path --exact ${REPO_DOTFILES[name]}`
+    if [ -z $localDotfilesRepo ]; then
+        local dotfilesDir=$tmpdir/${REPO_DOTFILES[name]}
+        git clone $(repoUrl ${REPO_DOTFILES[site]} ${REPO_DOTFILES[name]}) $dotfilesDir
+    else
+        logInfo "Using $localDotfilesRepo"
+        local dotfilesDir=$localDotfilesRepo
+    fi
 
-    # ローカルに存在していなかったら、privateリポジトリから dotfiles-secret を一時的にclone
-    # TODO ローカルにあったらそれを使う
-    logInfo "Cloning ${REPO_DOTFILES_SECRET[name]} ..."
-    # git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) $dotfilesSecretDir
-    mkdir -p $dotfilesSecretDir ; rmdir $dotfilesSecretDir ; cp -r ../dotfiles-secret $dotfilesSecretDir # TODO 消す
+    # dotfiles-secretリポジトリを探す
+    # ローカルに存在していてghq管理されていたらそれを使う
+    local localDotfilesSecretRepo=`has ghq &&  ghq list --full-path --exact ${REPO_DOTFILES_SECRET[name]}`
+    if [ -z $localDotfilesSecretRepo ]; then
+        local dotfilesSecretDir=$tmpdir/${REPO_DOTFILES_SECRET[name]}
+        git clone $(repoUrl ${REPO_DOTFILES_SECRET[site]} ${REPO_DOTFILES_SECRET[name]}) $dotfilesSecretDir
+    else
+        logInfo "Using $localDotfilesSecretRepo"
+        local dotfilesSecretDir=$localDotfilesSecretRepo
+    fi
 
     # 補助関数が手に入ったのでsource
-    local supportDir=$tmpdir/${REPO_DOTFILES[name]}/install-support
+    local supportDir=$dotfilesDir/install-support
     . $supportDir/function.sh
     logOk "source-ed $supportDir/function.sh"
 
