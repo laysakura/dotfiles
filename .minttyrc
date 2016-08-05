@@ -10,3 +10,4 @@ DeleteSendsDEL=yes
 FontHeight=9
 CtrlShiftShortcuts=yes
 Term=xterm-256color
+CursorType=block
