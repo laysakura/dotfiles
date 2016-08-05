@@ -1,14 +1,20 @@
+export basedir=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)/..
+
 function suggestDependencies() {
     for d in ${DEPENDENCIES[@]}; do
         has $d || die "Missing command $d: Following commands are required before dotfiles' installation - `echo ${DEPENDENCIES[@]}`"
     done
 }
 
+function sourcePath() {
+    # やや乱暴だが、PATH含めてzshの環境変数を全部取ってくる
+    for f in $basedir/.zsh/[0-9]*env*.zsh; do . $f; done
+}
+
 function installNonRootPackageManager() {
     if [ is_linux ]; then
         if ! has brew; then
             ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-            export PATH=$HOME/.linuxbrew/bin:$PATH
         fi
         brew update
     elif [ is_msys ]; then
@@ -32,6 +38,7 @@ function installPackage() {
 
 function runInstallPackages() {
     suggestDependencies
+    sourcePath
     installNonRootPackageManager
 
     mkdir -p $HOME_BIN
@@ -71,10 +78,6 @@ function runInstallPackages() {
 
         extract $goarchive $HOME
         mv $HOME/go $HOME/.go
-
-        export GOROOT=$HOME/.go
-        export GOPATH=$HOME/.ghq
-        export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
     fi
 
     # zsh
