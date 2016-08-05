@@ -87,7 +87,7 @@ function runInstallPackages() {
     has ghq || go get github.com/motemen/ghq
 
     # peco
-    has peco || ghq get github.com/peco/peco/cmd/peco
+    has peco || go get github.com/peco/peco/cmd/peco
 
     # diff-highlight
     if ! has diff-highlight; then
