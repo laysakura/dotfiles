@@ -83,11 +83,14 @@ function runInstallPackages() {
         mv $HOME/go $HOME/.go
     fi
 
+    # winpty (minttyでinteractive modeにするためのワークアラウンド)
+    is_msys && installPackage winpty-git
+
     # zsh
     has zsh || installPackage zsh
 
     # zplug
-    has zplug || (curl -sL zplug.sh/installer |zsh)
+    test -d $HOME/.zplug || (curl -sL zplug.sh/installer |zsh)
 
     # tmux
     has tmux || installPackage tmux
