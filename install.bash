@@ -94,9 +94,8 @@ function run() {
     . $supportDir/installPackages.sh
     logOk "Successfully Installed packages"
 
-    # ログインシェルの変更
-    logInfo "Changing login shell to zsh ..."
-    chsh --shell `which zsh`
+    # ログインシェルの変更を促す
+    logInfo "You might want to change login shell by 'chsh --shell `which zsh`'. Or 'echo `which zsh` >> ~/.bashrc'"
 
     logOk "Installation successfully finished!"
 }

@@ -13,10 +13,11 @@ function sourcePath() {
 
 function installNonRootPackageManager() {
     if [ is_linux ]; then
-        if ! has brew; then
-            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-        fi
-        brew update
+        logWarn "linuxbrew has a problem with 'brew install pkg-config' so I stopped using it ..."
+        # if ! has brew; then
+        #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+        # fi
+        # brew update
     elif [ is_msys ]; then
         has pacman || die "MSYS2 is supposed to have pacman"
     else
@@ -28,7 +29,8 @@ function installPackage() {
     local package=$1
 
     if [ is_linux ]; then
-        brew install $package
+        logWarn "Suggestion: sudo apt install $package"
+        # brew install $package
     elif [ is_msys ]; then
         pacman -S $package
     else
@@ -44,11 +46,11 @@ function runInstallPackages() {
     mkdir -p $HOME_BIN
 
     # gcc, binutils (brewでsource packageをインストールするのに必要)
-    installPackage gcc
-    installPackage binutils
+    has gcc || installPackage gcc
+    has as || installPackage binutils
 
     # unzip
-    installPackage unzip
+    has unzip || installPackage unzip
 
     # golang (ghqなどのGo制パッケージをインストールするのに必要)
     ## brew install goにしたかったが、Linuxにて下記のように失敗:
@@ -82,10 +84,10 @@ function runInstallPackages() {
     fi
 
     # zsh
-    installPackage zsh
+    has zsh || installPackage zsh
 
     # tmux
-    installPackage tmux
+    has tmux || installPackage tmux
 
     # ghq
     has ghq || go get github.com/motemen/ghq
