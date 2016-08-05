@@ -34,11 +34,19 @@ function repoUrl() {
     local repoName=$2
     echo -n "https://${SITE_USER[$repoSite]}@${SITE_URL[$repoSite]}/$repoName.git"
 }
+function has() {
+    type "$1" >/dev/null 2>&1
+    return $?
+}
 function logError() {
     printf "\033[31m%s\033[m\n" "[ERROR] $*" 1>&2
 }
 function logInfo() {
     printf "\033[36m%s\033[m\n" "[INFO]  $*" 1>&2
+}
+function die() {
+    logError "$1" 1>&2
+    exit ${2:-1}
 }
 
 # インストール実行
@@ -46,6 +54,8 @@ function run() {
     local tmpdir=`mktemp -d`
     local dotfilesDir=$tmpdir/${REPO_DOTFILES[name]}
     local dotfilesSecretDir=$tmpdir/${REPO_DOTFILES_SECRET[name]}
+
+    has git || die "You must have git command"
 
     # ローカルに存在していなかったら、publicリポジトリから dotfilesを 一時的にclone
     # TODO ローカルにあったらそれを使う
