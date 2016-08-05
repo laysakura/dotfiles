@@ -1,24 +1,25 @@
 # 文字列操作
-function downcase() {
-    tr "[:upper:]" "[:lower:]"
-}
-function upcase() {
-    tr "[:lower:]" "[:upper:]"
-}
+function downcase() { tr "[:upper:]" "[:lower:]"; }
+function upcase() { tr "[:lower:]" "[:upper:]"; }
 
 # OS判定
-function ostype() {
-    uname| downcase
-}
+function ostype() { uname| downcase; }
 function is_linux() { [[ `ostype` == linux* ]]; }
 function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
 function is_msys() { [[ `ostype` == msys* ]]; }
 
 # シェル
-function isExist() { type "$1" >/dev/null 2>&1; return $?; }
+function isExist() {
+    type "$1" >/dev/null 2>&1
+    return $?
+}
+
 function isInteractiveShell() { [ ! -z "$PS1" ]; }
 function isSshRunning() { [ ! -z "$SSH_CONECTION" ]; }
+
+## ディレクトリやシンボリックリンク実体化を含め上書きコピー
+function cpDeep() { cp -rfH $* ; }
 
 # git操作
 ## git管理されているファイルを丸っとコピー

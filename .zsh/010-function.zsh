@@ -1,1 +1,1 @@
-../install-support/010-function.zsh
+../install-support/function.sh
