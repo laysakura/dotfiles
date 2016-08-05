@@ -72,9 +72,14 @@ function run() {
     # 利用するソフトウェアのインストール
     logInfo "Installing packages ..."
     . $supportDir/installPackages.sh
+    logOk "Successfully Installed packages"
 
     # ログインシェルの変更
+    logInfo "Changing login shell to zsh ..."
+    chsh --shell `which zsh`
 
     logOk "Installation successfully finished!"
 }
 run
+
+zsh
