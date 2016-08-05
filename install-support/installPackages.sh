@@ -19,7 +19,7 @@ function installNonRootPackageManager() {
 }
 
 function installPackage() {
-    local $package="$1"
+    local package=$1
 
     if [ is_linux ]; then
         brew install $package
@@ -71,6 +71,10 @@ function runInstallPackages() {
 
         extract $goarchive $HOME
         mv $HOME/go $HOME/.go
+
+        export GOROOT=$HOME/.go
+        export GOPATH=$HOME/.ghq
+        export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
     fi
 
     # zsh
