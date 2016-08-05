@@ -6,7 +6,10 @@ function suggestDependencies() {
 
 function installNonRootPackageManager() {
     if [ is_linux ]; then
-        has brew || ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+        if ! has brew; then
+            ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+            export PATH=$HOME/.linuxbrew/bin:$PATH
+        fi
         brew update
     elif [ is_msys ]; then
         has pacman || die "MSYS2 is supposed to have pacman"
@@ -16,7 +19,7 @@ function installNonRootPackageManager() {
 }
 
 function installPackage() {
-    local $package=$1
+    local $package="$1"
 
     if [ is_linux ]; then
         brew install $package
