@@ -1,4 +1,4 @@
-is_osx || return
+is_osx || return 0
 
 alias ls='ls -G'
 alias ll='ls -lG'

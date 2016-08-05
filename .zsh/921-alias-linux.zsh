@@ -1,4 +1,4 @@
-is_linux || return
+is_linux || return 0
 
 alias ls='ls --color'
 alias ll='ls -l --color'
