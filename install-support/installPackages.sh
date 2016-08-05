@@ -39,6 +39,8 @@ function runInstallPackages() {
     suggestDependencies
     installNonRootPackageManager
 
+    mkdir -p $HOME_BIN
+
     # gcc (brewでsource packageをインストールするのに必要)
     has gcc || brew install gcc
 

@@ -26,6 +26,8 @@ declare -A REPO_DOTFILES=(
     [name]='laysakura/dotfiles'
 )
 
+HOME_BIN=$HOME/.bin
+
 # dotfilesリポジトリをcloneするまでに使用する最低限の関数定義
 function repoUrl() {
     local repoSite=$1
