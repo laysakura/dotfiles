@@ -38,13 +38,13 @@ function runInstallPackages() {
     mkdir -p $HOME_BIN
 
     # gcc (brewでsource packageをインストールするのに必要)
-    has gcc || brew install gcc
+    has gcc || installPackage gcc
 
     # unzip
-    has unzip || brew install unzip
+    has unzip || installPackage unzip
 
     # golang (ghqなどのGo制パッケージをインストールするのに必要)
-    ## Linuxにて、brew install goが下記のように失敗:
+    ## brew install goにしたかったが、Linuxにて下記のように失敗:
     ### Error: SHA256 mismatch
     ### Expected: 141b8345932641483c2437bdbd65488a269282ac85f91170805c273f03dd223b
     ### Actual: ce3140662f45356eb78bc16a88fc7cfb29fb00e18d7c632608245b789b2086d2
