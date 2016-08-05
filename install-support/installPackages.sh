@@ -9,7 +9,6 @@ function suggestDependencies() {
 function sourcePath() {
     # やや乱暴だが、PATH含めてzshの環境変数を全部取ってくる
     for f in $basedir/.zsh/[0-9]*env*.zsh; do . $f; done
-    logWarn $PATH
 }
 
 function installNonRootPackageManager() {
@@ -44,11 +43,12 @@ function runInstallPackages() {
 
     mkdir -p $HOME_BIN
 
-    # gcc (brewでsource packageをインストールするのに必要)
-    has gcc || installPackage gcc
+    # gcc, binutils (brewでsource packageをインストールするのに必要)
+    installPackage gcc
+    installPackage binutils
 
     # unzip
-    has unzip || installPackage unzip
+    installPackage unzip
 
     # golang (ghqなどのGo制パッケージをインストールするのに必要)
     ## brew install goにしたかったが、Linuxにて下記のように失敗:
@@ -82,10 +82,10 @@ function runInstallPackages() {
     fi
 
     # zsh
-    has zsh || installPackage zsh
+    installPackage zsh
 
     # tmux
-    has tmux || installPackage tmux
+    installPackage tmux
 
     # ghq
     has ghq || go get github.com/motemen/ghq
