@@ -9,6 +9,7 @@ function suggestDependencies() {
 function sourcePath() {
     # やや乱暴だが、PATH含めてzshの環境変数を全部取ってくる
     for f in $basedir/.zsh/[0-9]*env*.zsh; do . $f; done
+    logWarn $PATH
 }
 
 function installNonRootPackageManager() {
