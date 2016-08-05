@@ -1,7 +1,3 @@
-# インストールされてるべきやつ
-# git
-# ruby
-
 function suggestDependencies() {
     for d in ${DEPENDENCIES[@]}; do
         has $d || die "Missing command $d: Following commands are required before dotfiles' installation - ${DEPENDENCIES[@]}"
