@@ -89,6 +89,6 @@ function runInstallPackages() {
     fi
 
     # plantuml.jar
-    test -f $HOME/.plantuml.jar || curl http://jaist.dl.sourceforge.net/project/plantuml/plantuml.jar -o $HOME/.plantuml.jar
+    test -f $HOME/plantuml.jar || curl http://jaist.dl.sourceforge.net/project/plantuml/plantuml.jar -o $HOME/plantuml.jar
 }
 runInstallPackages
