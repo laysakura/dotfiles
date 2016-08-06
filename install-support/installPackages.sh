@@ -84,7 +84,7 @@ function runInstallPackages() {
     fi
 
     # winpty (minttyでinteractive modeにするためのワークアラウンド)
-    is_msys && installPackage winpty-git
+    is_msys && has winpty || installPackage winpty
 
     # zsh
     has zsh || installPackage zsh

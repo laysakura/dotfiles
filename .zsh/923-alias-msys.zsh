@@ -1,4 +1,4 @@
-is_msys || return
+is_msys || return 0
 
 alias ls='ls --color'
 alias ll='ls -l --color'

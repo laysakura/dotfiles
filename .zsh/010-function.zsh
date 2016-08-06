@@ -7,7 +7,7 @@ function ostype() { uname| downcase; }
 function is_linux() { [[ `ostype` == linux* ]]; }
 function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
-function is_msys() { [[ `ostype` == msys* ]]; }
+function is_msys() { [[ `uname` == MSYS* ]]; }  # workaround: なぜかostypeが空文字列を返すことがある...
 
 # シェル
 function has() {

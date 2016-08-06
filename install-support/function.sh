@@ -7,7 +7,7 @@ function ostype() { uname| downcase; }
 function is_linux() { [[ `ostype` == linux* ]]; }
 function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
-function is_msys() { [[ `ostype` == msys* ]]; }
+function is_msys() { [[ `uname` == MSYS* ]]; }  # workaround: ostypeが空文字列返す時がある...
 
 # logger
 function logError() {
