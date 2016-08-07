@@ -44,3 +44,7 @@ cpDeep $basedir/.gdbinit $HOME/
 
 # xkb
 cpDeep $basedir/.xkb $HOME/
+
+# IntelliJ
+logWarn 'You may have to rename .IntelliJIdea2016.2/ directory corresponding to IntelliJ version'
+cpDeep $basedir/.IntelliJIdea2016.2 $HOME/
