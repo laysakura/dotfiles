@@ -42,5 +42,5 @@ cpDeep $basedir/.octaverc $HOME/
 # gdb
 cpDeep $basedir/.gdbinit $HOME/
 
-# xmodmap
-cpDeep $basedir/.Xmodmap $HOME/
+# xkb
+cpDeep $basedir/.xkb $HOME/

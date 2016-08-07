@@ -1,6 +1,0 @@
-! PrintScreen as Win key
-clear mod4
-keycode 107 = Super_R
-keycode 133 = Super_L
-add mod4 = Super_L
-add mod4 = Super_R
