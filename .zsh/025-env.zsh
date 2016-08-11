@@ -1,3 +1,6 @@
+# Regard `/` as word splitter (for M-f, M-b, ...)
+export WORDCHARS="*?_-.[]~&;=!#$%^(){}<>"
+
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
 
