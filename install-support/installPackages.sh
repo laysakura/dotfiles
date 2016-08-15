@@ -112,5 +112,8 @@ function runInstallPackages() {
 
     # xclip
     is_linux || (has xclip || installPackage xclip)
+
+    # GoldenDict
+    is_linux || (has goldendict || installPackage goldendict)
 }
 runInstallPackages
