@@ -38,7 +38,6 @@
       (setq interprogram-cut-function 'paste-to-osx)
       (setq interprogram-paste-function 'copy-from-osx)))
 
-
 (if (eq system-type 'gnu/linux)
     (progn
       (defun my-cut-function (text &optional rest)
