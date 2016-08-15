@@ -3,7 +3,6 @@
 # 設定
 declare -a DEPENDENCIES=(
     'git'
-    'ruby'
 )
 
 declare -A SITE_URL=(
