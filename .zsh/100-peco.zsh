@@ -1,11 +1,25 @@
+# ヒストリ補完
+function pecoHistorySelection() {
+    if has tac; then
+        tac='tac'
+    else
+        tac='tail -r'
+    fi
+    BUFFER=$(history -n 1 | eval $tac  | awk '!a[$0]++' | peco)
+    CURSOR=$#BUFFER
+    zle reset-prompt
+}
+zle -N pecoHistorySelection
+bindkey '^r' pecoHistorySelection
+
 # リポジトリにcd
-function peco-src () {
-    local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
-    if [ -n "$selected_dir" ]; then
-        BUFFER="cd ${selected_dir}"
+function pecoCdRepo () {
+    local selectedDir=$(ghq list -p | peco --query "$LBUFFER")
+    if [ -n "$selectedDir" ]; then
+        BUFFER="cd ${selectedDir}"
         zle accept-line
     fi
     zle clear-screen
 }
-zle -N peco-src
-bindkey '^j' peco-src
+zle -N pecoCdRepo
+bindkey '^j' pecoCdRepo
