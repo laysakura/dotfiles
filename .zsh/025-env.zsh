@@ -9,6 +9,9 @@ export SAVEHIST=100000
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
 
+# java
+export PATH=$HOME/.jdk/jdk1.8.0_101/bin:$PATH
+
 # scala
 export PATH=$HOME/.scalaenv/bin:$PATH
 eval "$(scalaenv init -)"
