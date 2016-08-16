@@ -9,6 +9,10 @@ export SAVEHIST=100000
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
 
+# scala
+export PATH=$HOME/.scalaenv/bin:$PATH
+eval "$(scalaenv init -)"
+
 # golang
 export GOROOT=$HOME/.go
 export GOPATH=$HOME/.ghq
