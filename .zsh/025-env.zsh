@@ -16,6 +16,10 @@ export PATH=$HOME/.jdk/jdk1.8.0_101/bin:$PATH
 export PATH=$HOME/.scalaenv/bin:$PATH
 eval "$(scalaenv init -)"
 
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # golang
 export GOROOT=$HOME/.go
 export GOPATH=$HOME/.ghq
