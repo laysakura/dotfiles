@@ -44,6 +44,14 @@ cpDeep $basedir/.gdbinit $HOME/
 
 # xkb
 cpDeep $basedir/.xkb $HOME/
+mkdir -p $HOME/.config/autostart
+cat > $HOME/.config/autostart/xkb.desktop <<EOS
+[Desktop Entry]
+Name=xkb
+Exec=xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/mykbd $DISPLAY
+Type=Application
+X-GNOME-Autostart-enabled=true
+EOS
 
 # IntelliJ
 logWarn 'You may have to rename .IntelliJIdea2016.2/ directory corresponding to IntelliJ version'
