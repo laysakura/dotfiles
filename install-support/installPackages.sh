@@ -115,9 +115,9 @@ function runInstallPackages() {
     test -f $HOME/plantuml.jar || curl http://jaist.dl.sourceforge.net/project/plantuml/plantuml.jar -o $HOME/plantuml.jar
 
     # xclip
-    is_linux || (has xclip || installPackage xclip)
+    is_ubuntu && (has xclip || installPackage xclip)
 
     # GoldenDict
-    is_linux || (has goldendict || installPackage goldendict)
+    is_ubuntu && (has goldendict || installPackage goldendict)
 }
 runInstallPackages
