@@ -119,5 +119,14 @@ function runInstallPackages() {
 
     # GoldenDict
     is_ubuntu && (has goldendict || installPackage goldendict)
+
+    # scalaenv
+    has scalaenv || git clone git://github.com/mazgi/scalaenv.git ~/.scalaenv
+
+    # rubyenv
+    if ! has rubyenv; then
+        git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+        git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    fi
 }
 runInstallPackages
