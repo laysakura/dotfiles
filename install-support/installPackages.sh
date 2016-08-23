@@ -99,6 +99,9 @@ function runInstallPackages() {
     # tmux
     has tmux || installPackage tmux
 
+    # emacs
+    has emacs || installPackage emacs-nox
+ 
     # ghq
     has ghq || go get github.com/motemen/ghq
 
