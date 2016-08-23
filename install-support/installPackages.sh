@@ -11,13 +11,13 @@ function sourcePath() {
     for f in $basedir/.zsh/[0-9]*env*.zsh; do . $f; done
 }
 
-function installNonRootPackageManager() {
+function installPackageManager() {
     if is_linux; then
-        logWarn "linuxbrew has a problem with 'brew install pkg-config' so I stopped using it ..."
-        # if ! has brew; then
-        #     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-        # fi
-        # brew update
+        if is_ubuntu; then
+            logInfo "Using apt as package manager"
+        else
+            logWarn 'Linux package installation is only supported in Ubuntu'
+        fi
     elif is_msys; then
         has pacman || die "MSYS2 is supposed to have pacman"
     else
@@ -29,8 +29,12 @@ function installPackage() {
     local package=$1
 
     if is_linux; then
-        logWarn "Suggestion: sudo apt install $package"
-        # brew install $package
+        if is_ubuntu; then
+            logInfo "Installing $package ..."
+            sudo apt install $package
+        else
+            logWarn 'Linux package installation is only supported in Ubuntu'
+        fi
     elif is_msys; then
         pacman -S $package
     else
@@ -41,11 +45,11 @@ function installPackage() {
 function runInstallPackages() {
     suggestDependencies
     sourcePath
-    installNonRootPackageManager
+    installPackageManager
 
     mkdir -p $HOME_BIN
 
-    # gcc, binutils (brewでsource packageをインストールするのに必要)
+    # gcc, binutils
     has gcc || installPackage gcc
     has as || installPackage binutils
 
