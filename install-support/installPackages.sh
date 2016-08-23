@@ -101,7 +101,13 @@ function runInstallPackages() {
 
     # emacs
     has emacs || installPackage emacs-nox
- 
+
+    # vim
+    has vim || installPackage vim
+
+    # inconsolata
+    isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata
+
     # ghq
     has ghq || go get github.com/motemen/ghq
 
