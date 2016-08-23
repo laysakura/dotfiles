@@ -81,6 +81,9 @@ function run() {
     . $supportDir/function.sh
     logOk "source-ed $supportDir/function.sh"
 
+    # 一回だけ実行すれば良いもの(冪等性は必要)
+    is_ubuntu && gsettings set org.gnome.settings-daemon.plugins.keyboard active false
+
     # dotfiles-secretをdotfilesにマージ
     gitCopy $dotfilesSecretDir $dotfilesDir HEAD
 
