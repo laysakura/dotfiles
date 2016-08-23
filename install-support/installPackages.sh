@@ -117,6 +117,9 @@ function runInstallPackages() {
     # plantuml.jar
     test -f $HOME/plantuml.jar || curl http://jaist.dl.sourceforge.net/project/plantuml/plantuml.jar -o $HOME/plantuml.jar
 
+    # unity-tweak-tool
+    is_ubuntu && (has unity-tweak-tool || installPackage unity-tweak-tool)
+
     # xclip
     is_ubuntu && (has xclip || installPackage xclip)
 
@@ -131,5 +134,8 @@ function runInstallPackages() {
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
         git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     fi
+
+    # nodebrew
+    has nodebrew || (curl -L git.io/nodebrew |perl - setup)
 }
 runInstallPackages
