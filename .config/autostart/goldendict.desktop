@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=goldendict
+Exec=goldendict
+Type=Application
+X-GNOME-Autostart-enabled=true
+EOS

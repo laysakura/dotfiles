@@ -42,9 +42,11 @@ cpDeep $basedir/.octaverc $HOME/
 # gdb
 cpDeep $basedir/.gdbinit $HOME/
 
+# autostarts
+cpDeep $basedir/.config $HOME/
+
 # xkb
 cpDeep $basedir/.xkb $HOME/
-mkdir -p $HOME/.config/autostart
 cat > $HOME/.config/autostart/xkb.desktop <<EOS
 [Desktop Entry]
 Name=xkb
