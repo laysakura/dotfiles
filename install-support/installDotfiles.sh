@@ -56,8 +56,7 @@ X-GNOME-Autostart-enabled=true
 EOS
 
 # IntelliJ
-logWarn 'You may have to rename .IntelliJIdea2016.2/ directory corresponding to IntelliJ version'
-cpDeep $basedir/.IntelliJIdea2016.2 $HOME/
+cpDeep $basedir/.IdeaIC2016.2 $HOME/
 
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
