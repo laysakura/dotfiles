@@ -113,7 +113,7 @@ function run() {
     logOk "source-ed $supportDir/function.sh"
 
     # 一回だけ実行すれば良いもの(冪等性は必要)
-    dbusUnityMagic
+    is_ubuntu && dbusUnityMagic
     is_ubuntu && gsettings set org.gnome.settings-daemon.plugins.keyboard active false  # fcitx切り替えの際にxkbキーバインドが戻らないようにする
     is_ubuntu && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs          # 操作を全体的にEmacs風に
 
