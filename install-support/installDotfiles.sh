@@ -58,5 +58,8 @@ EOS
 # IntelliJ
 cpDeep $basedir/.IdeaIC2016.2 $HOME/
 
+# RubyMine
+cpDeep $basedir/.RubyMine2016.2 $HOME/
+
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
