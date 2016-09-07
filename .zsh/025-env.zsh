@@ -19,6 +19,9 @@ export PATH=$HOME/.jdk/jdk1.8.0_101/bin:$PATH
 export PATH=$HOME/.scalaenv/bin:$PATH
 eval "$(scalaenv init -)"
 
+# flyway
+export PATH=$HOME/.flyway:$PATH
+
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"

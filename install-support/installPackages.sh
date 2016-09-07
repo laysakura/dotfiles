@@ -135,6 +135,18 @@ function runInstallPackages() {
     # scalaenv
     has scalaenv || git clone git://github.com/mazgi/scalaenv.git ~/.scalaenv
 
+    # flyway
+    if ! has flyway; then
+        if is_linux; then
+            (
+                cd `mktemp -d`
+                curl https://repo1.maven.org/maven2/org/flywaydb/flyway-commandline/4.0.3/flyway-commandline-4.0.3-linux-x64.tar.gz -o flyway-commandline-4.0.3-linux-x64.tar.gz
+                tar xf flyway-commandline-4.0.3-linux-x64.tar.gz
+                mv flyway-4.0.3 $HOME/.flyway
+            )
+        fi
+    fi
+
     # rbenv
     if ! has rbenv; then
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
