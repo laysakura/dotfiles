@@ -2,7 +2,6 @@
 .gitconfig
 .pypirc
 /.ssh
-/.sbt
 /.goldendict
 
 # Created by https://www.gitignore.io/api/emacs,intellij,rubymine
