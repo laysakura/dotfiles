@@ -23,6 +23,8 @@ function installPackage() {
         fi
     elif is_msys; then
         pacman -S $package
+    elif is_osx; then
+        brew install $package
     else
         die "Cannot detect `ostype`'s package manager"
     fi
