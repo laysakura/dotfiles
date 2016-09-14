@@ -93,7 +93,7 @@ function runInstallPackages() {
     has vim || installPackage vim
 
     # inconsolata
-    isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata
+    is_ubuntu && (isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata)
 
     # ghq
     has ghq || go get github.com/motemen/ghq
