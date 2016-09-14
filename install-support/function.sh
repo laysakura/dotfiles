@@ -75,6 +75,8 @@ function isPackageInstalled() {
     local package=$1
     if is_ubuntu; then
         dpkg -l |grep $package > /dev/null 2>&1
+    elif is_osx; then
+        brew list |grep $package > /dev/null 2>&1
     else
         die 'not implemented yet'
     fi
