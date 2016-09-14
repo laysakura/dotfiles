@@ -11,20 +11,6 @@ function sourcePath() {
     for f in $basedir/.zsh/[0-9]*env*.zsh; do . $f; done
 }
 
-function installPackageManager() {
-    if is_linux; then
-        if is_ubuntu; then
-            logInfo "Using apt as package manager"
-        else
-            logWarn 'Linux package installation is only supported in Ubuntu'
-        fi
-    elif is_msys; then
-        has pacman || die "MSYS2 is supposed to have pacman"
-    else
-        die "Cannot detect `ostype`'s package manager"
-    fi
-}
-
 function installPackage() {
     local package=$1
 
@@ -45,7 +31,6 @@ function installPackage() {
 function runInstallPackages() {
     suggestDependencies
     sourcePath
-    installPackageManager
 
     mkdir -p $HOME_BIN
 
