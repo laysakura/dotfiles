@@ -10,7 +10,6 @@ function pecoHistorySelection() {
     zle reset-prompt
 }
 zle -N pecoHistorySelection
-bindkey '^r' pecoHistorySelection
 
 # リポジトリにcd
 function pecoCdRepo () {
@@ -22,4 +21,3 @@ function pecoCdRepo () {
     zle clear-screen
 }
 zle -N pecoCdRepo
-bindkey '^j' pecoCdRepo

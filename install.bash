@@ -1,4 +1,5 @@
-#!/usr/bin/env bash -xeu
+#!/usr/bin/env bash
+set -xeu
 
 # 設定
 declare -a DEPENDENCIES=(
