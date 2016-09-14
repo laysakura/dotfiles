@@ -39,7 +39,7 @@ function die() {
 }
 
 ## ディレクトリやシンボリックリンク実体化を含め上書きコピー
-function cpDeep() { cp -rfH $* ; }
+function cpDeep() { cp -RfH $* ; }
 
 ## アーカイブファイルの展開
 function extract() {
