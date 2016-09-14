@@ -92,6 +92,9 @@ function runInstallPackages() {
     # vim
     has vim || installPackage vim
 
+    # wget
+    has wget || installPackage wget
+
     # inconsolata
     is_ubuntu && (isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata)
 
