@@ -49,14 +49,16 @@ cpDeep $basedir/.gdbinit $HOME/
 cpDeep $basedir/.config $HOME/
 
 # xkb
-cpDeep $basedir/.xkb $HOME/
-cat > $HOME/.config/autostart/xkb.desktop <<EOS
+if is_linux; then
+    cpDeep $basedir/.xkb $HOME/
+    cat > $HOME/.config/autostart/xkb.desktop <<EOS
 [Desktop Entry]
 Name=xkb
 Exec=xkbcomp -I$HOME/.xkb $HOME/.xkb/keymap/mykbd $DISPLAY
 Type=Application
 X-GNOME-Autostart-enabled=true
 EOS
+fi
 
 # IntelliJ
 cpDeep $basedir/.IdeaIC2016.2 $HOME/
