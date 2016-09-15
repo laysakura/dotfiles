@@ -145,15 +145,5 @@ function runInstallPackages() {
 
     # nodebrew
     has nodebrew || (curl -L git.io/nodebrew |perl - setup)
-
-    # JDK
-    if [ ! -d $HOME/.jdk ]; then
-        (
-            cd `mktemp -d`
-            wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz
-            tar xf jdk-8u102-linux-x64.tar.gz
-            mv jdk1.8.0_102/ $HOME/.jdk
-        )
-    fi
 }
 runInstallPackages

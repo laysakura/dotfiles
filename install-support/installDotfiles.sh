@@ -48,6 +48,11 @@ cpDeep $basedir/.gdbinit $HOME/
 # autostarts
 cpDeep $basedir/.config $HOME/
 
+# OS X keymap
+if is_osx; then
+    cp $basedir/MacKeyMap/* "$HOME/Library/Keyboard Layouts/"
+fi
+
 # xkb
 if is_linux; then
     cpDeep $basedir/.xkb $HOME/
