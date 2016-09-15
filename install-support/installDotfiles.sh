@@ -66,10 +66,18 @@ EOS
 fi
 
 # IntelliJ
-cpDeep $basedir/.IdeaIC2016.2 $HOME/
+if is_linux; then
+    cpDeep $basedir/.IdeaIC2016.2 $HOME/
+elif is_osx; then
+    cpDeep $basedir/.IdeaIC2016.2/idea64.vmoptions $HOME/Library/Preferences/IdeaIC2016.2/idea.vmoptions
+fi
 
 # RubyMine
-cpDeep $basedir/.RubyMine2016.2 $HOME/
+if is_linux; then
+    cpDeep $basedir/.RubyMine2016.2 $HOME/
+elif is_osx; then
+    cpDeep $basedir/.RubyMine2016.2/rubymine.vmoptions $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
+fi
 
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
