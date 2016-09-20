@@ -13,7 +13,7 @@ export EDITOR=vim  # just for speed..
 export PATH=$HOME/.bin:$PATH
 
 # java
-export PATH=$HOME/.jdk/jdk1.8.0_101/bin:$PATH
+export PATH=$JAVA_HOME/bin:$PATH
 
 # scala
 export PATH=$HOME/.scalaenv/bin:$PATH
