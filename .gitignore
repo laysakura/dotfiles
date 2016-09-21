@@ -3,6 +3,7 @@
 .pypirc
 /.ssh
 /.goldendict
+/.sbt/0.13/global.sbt
 
 # Created by https://www.gitignore.io/api/emacs,intellij,rubymine
 
