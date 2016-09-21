@@ -145,5 +145,10 @@ function runInstallPackages() {
 
     # nodebrew
     has nodebrew || (curl -L git.io/nodebrew |perl - setup)
+
+    # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
+    if is_osx; then
+        has reattach-to-user-namespace || installPackage reattach-to-user-namespace
+    fi
 }
 runInstallPackages
