@@ -5,3 +5,5 @@ alias ll='ls -lG'
 alias la='ls -aG'
 alias lla='ls -laG'
 alias l='ls -FG'
+
+alias sed='gsed'

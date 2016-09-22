@@ -150,5 +150,10 @@ function runInstallPackages() {
     if is_osx; then
         has reattach-to-user-namespace || installPackage reattach-to-user-namespace
     fi
+
+    # gsed
+    if is_osx; then
+        has gsed || installPackage gnu-sed
+    fi
 }
 runInstallPackages
