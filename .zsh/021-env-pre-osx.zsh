@@ -8,3 +8,6 @@ export INFOPATH=$BREWPATH/share/info:${INFOPATH:-}
 
 # Java
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home`
+
+# Python (pyenv is supposed to be installed via homebrew)
+eval "$(pyenv init -)"
