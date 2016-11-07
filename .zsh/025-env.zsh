@@ -12,6 +12,9 @@ export EDITOR=vim  # just for speed..
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
 
+# less
+export LESS='-i -M -R -S -W -x4'
+
 # java
 export PATH=$JAVA_HOME/bin:$PATH
 
