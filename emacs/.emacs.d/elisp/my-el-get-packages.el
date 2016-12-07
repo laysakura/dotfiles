@@ -13,10 +13,10 @@
                :type github
                :pkgname "defunkt/markdown-mode"
                :description "Major mode to edit Markdown files in Emacs")
-        (:name django-mode
-               :type github
-               :pkgname "myfreeweb/django-mode"
-               :description "Django mode and snippets for Emacs")
+        ;; (:name django-mode
+        ;;        :type github
+        ;;        :pkgname "myfreeweb/django-mode"
+        ;;        :description "Django mode and snippets for Emacs")
         (:name haml-mode
                :type github
                :pkgname "nex3/haml-mode"
@@ -103,7 +103,7 @@
     jedi
     python
     markdown-mode
-    django-mode
+    ;; django-mode
     haml-mode
     exec-path-from-shell
     kolon-mode
