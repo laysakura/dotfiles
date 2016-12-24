@@ -90,7 +90,6 @@ function runInstallPackages() {
     has emacs || installPackage emacs-nox
     (
         cd $HOME/.emacs.d
-        cask init
         cask install
     )
 
