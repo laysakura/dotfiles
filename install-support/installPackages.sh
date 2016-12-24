@@ -88,6 +88,11 @@ function runInstallPackages() {
 
     # emacs
     has emacs || installPackage emacs-nox
+    (
+        cd $HOME/.emacs.d
+        cask init
+        cask install
+    )
 
     # vim
     has vim || installPackage vim
