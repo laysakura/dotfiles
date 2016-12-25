@@ -18,6 +18,8 @@
 (load-my-elisp "my-view")
 (load-my-elisp "my-global-setting")
 
+(load-my-elisp "my-company-mode")
+
 (load-my-elisp "my-rust-mode")
 
 (load-my-elisp "my-key-bind")
