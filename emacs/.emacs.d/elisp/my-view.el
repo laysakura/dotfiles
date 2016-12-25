@@ -1,1 +1,1 @@
-(color-theme-dark-laptop)
+(load-theme 'monokai t)
