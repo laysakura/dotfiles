@@ -3,3 +3,4 @@
 
 (depends-on "rust-mode")
 (depends-on "emacs-racer")
+(depends-on "flycheck-rust")
