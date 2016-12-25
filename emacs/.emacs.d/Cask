@@ -9,6 +9,7 @@
 (depends-on "flycheck-pos-tip")
 
 (depends-on "rust-mode")
+(depends-on "cargo")
 (depends-on "racer")
 (depends-on "company-racer")
 (depends-on "flycheck-rust")
