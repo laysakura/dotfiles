@@ -1,6 +1,3 @@
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; necessary settings
-;;;;;;;;;;;;;;;;;;;;;;;;
 (defconst ELISP_DIR "~/.emacs.d/elisp")
 (defun load-my-elisp (package-name)
   (load (concat ELISP_DIR "/" package-name)))

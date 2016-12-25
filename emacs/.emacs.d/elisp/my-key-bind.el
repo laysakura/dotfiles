@@ -9,3 +9,6 @@
 (global-set-key "\C-x\C-g" 'grep)
 (global-set-key "\C-\\" 'redo)
 (global-set-key "\M-h" 'backward-kill-word)
+
+(global-set-key "\M-n" 'flycheck-next-error)
+(global-set-key "\M-p" 'flycheck-previous-error)
