@@ -22,6 +22,3 @@
 (load-my-elisp "my-rust-mode")
 
 (load-my-elisp "my-key-bind")
-
-(put 'downcase-region 'disabled nil)
-(put 'upcase-region 'disabled nil)

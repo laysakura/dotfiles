@@ -126,3 +126,7 @@
 
 ;; Use 'y' instead of 'yes'
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; enable upcse/downcase-region
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
