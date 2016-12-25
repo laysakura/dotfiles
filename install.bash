@@ -126,9 +126,23 @@ function run() {
     . $supportDir/installDotfiles.sh
 
     # 利用するソフトウェアのインストール
-    logInfo "Installing packages ..."
-    . $supportDir/installPackages.sh
-    logOk "Successfully Installed packages"
+    logInfo "Installing packages by native commands ..."
+    . $supportDir/installPackagesByNativeCommands.sh
+    logOk "Successfully Installed packages by native commands"
+
+    logInfo "Following installation may require non-default package managers. Maybe you should re-run this installation."
+
+    logInfo "Installing packages by Homebrew ..."
+    is_osx && . $supportDir/installPackagesByHomebrew.sh
+    logOk "Successfully Installed packages by Homebrew"
+
+    logInfo "Installing packages by cargo ..."
+    is_osx && . $supportDir/installPackagesByCargo.sh
+    logOk "Successfully Installed packages by cargo"
+
+    logInfo "Installing packages by ghq ..."
+    is_osx && . $supportDir/installPackagesByGhq.sh
+    logOk "Successfully Installed packages by ghq"
 
     # ログインシェルの変更を促す
     logInfo "You might want to change login shell by 'chsh --shell `which zsh`'. Or 'echo `which zsh` >> ~/.bashrc'"
