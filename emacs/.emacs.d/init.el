@@ -85,7 +85,8 @@
   ;; Minor Mode
   (load-my-elisp "my-doc-view-mode")
   ;; (load-my-elisp "my-yasnippet-mode")
-  (load-my-elisp "my-auto-complete-mode")
+  ;; (load-my-elisp "my-auto-complete-mode")
+  (load-my-elisp "my-company-mode")
   (load-my-elisp "my-flymake-mode")
   (load-my-elisp "my-gtags-mode")
   (load-my-elisp "my-paredit-mode")
