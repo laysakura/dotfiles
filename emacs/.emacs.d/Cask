@@ -12,6 +12,7 @@
 (depends-on "racer")
 (depends-on "company-racer")
 (depends-on "flycheck-rust")
+(depends-on "flycheck-cargo")
 (depends-on "rustfmt")
 
 (depends-on "toml-mode")
