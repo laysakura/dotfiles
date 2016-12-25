@@ -16,7 +16,7 @@
 (load-my-elisp "my-defun")
 (load-my-elisp "my-core")
 (load-my-elisp "my-view")
-;; (load-my-elisp "my-global-setting")
+(load-my-elisp "my-global-setting")
 
 (load-my-elisp "my-rust-mode")
 
