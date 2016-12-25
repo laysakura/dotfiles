@@ -20,6 +20,7 @@
 (load-my-elisp "my-el-get-packages")
 ;; install cask packages
 (require 'cask)
+(cask-initialize)
 ;; to see ENV
 (require 'exec-path-from-shell)
 (when (memq window-system '(mac ns))
