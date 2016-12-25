@@ -2,3 +2,4 @@
 (source melpa)
 
 (depends-on "rust-mode")
+(depends-on "emacs-racer")
