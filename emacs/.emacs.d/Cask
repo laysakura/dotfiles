@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
 
+(depends-on "color-theme")
+
 (depends-on "company")
 
 (depends-on "flycheck")
