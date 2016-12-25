@@ -95,6 +95,7 @@
   ;; Major Mode
   (load-my-elisp "my-text-mode")
   (load-my-elisp "my-info+")
+  (load-my-elisp "my-rust-mode")
   (load-my-elisp "my-python-mode")
   (load-my-elisp "my-perl-mode")
   (load-my-elisp "my-ruby-mode")
