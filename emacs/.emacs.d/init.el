@@ -18,7 +18,7 @@
 ;; (load-my-elisp "my-view")
 ;; (load-my-elisp "my-global-setting")
 
-
+(load-my-elisp "my-rust-mode")
 
 ;; ;; override keybindings
 ;; (load-my-elisp "my-key-bind")
