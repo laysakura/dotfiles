@@ -13,15 +13,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; body
 ;;;;;;;;;;;;;;;;;;;;;;;;
-(load-my-elisp "my-defun")
-(load-my-elisp "my-core")
-(load-my-elisp "my-view")
-(load-my-elisp "my-global-setting")
+;; (load-my-elisp "my-defun")
+;; (load-my-elisp "my-core")
+;; (load-my-elisp "my-view")
+;; (load-my-elisp "my-global-setting")
 
 
 
-;; override keybindings
-(load-my-elisp "my-key-bind")
+;; ;; override keybindings
+;; (load-my-elisp "my-key-bind")
 
 
 (put 'downcase-region 'disabled nil)
