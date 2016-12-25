@@ -141,6 +141,11 @@ function runInstallPackages() {
         fi
     fi
 
+    # rust
+    ghq get rust-lang/rust
+    ln -sf $HOME/.ghq/src/github.com/rust-lang/rust /usr/local/src/
+    cargo install racer
+
     # rbenv
     if ! has rbenv; then
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
