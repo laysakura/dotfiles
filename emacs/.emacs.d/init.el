@@ -19,11 +19,11 @@
 (load-my-elisp "my-global-setting")
 
 (load-my-elisp "my-company-mode")
+(load-my-elisp "my-flycheck")
 
 (load-my-elisp "my-rust-mode")
 
 (load-my-elisp "my-key-bind")
-
 
 (put 'downcase-region 'disabled nil)
 (put 'upcase-region 'disabled nil)
