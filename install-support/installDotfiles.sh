@@ -83,7 +83,7 @@ fi
 
 # Karabiner-Elements
 if is_osx; then
-    mkdir -p $HOME/.karabiner.d/configuration
+    mkdir -p $HOME/.config/karabiner/configuration
     cpDeep $basedir/.karabiner.d/configuration/karabiner.json $HOME/.karabiner.d/configuration/
 fi
 
