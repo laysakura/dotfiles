@@ -29,7 +29,7 @@ eval "$(scalaenv init -)"
 export PATH=$HOME/.flyway:$PATH
 
 # rust
-export PATH=$HOME/.cargo/bin:$PATH
+test -e $HOME/.cargo/env && . $HOME/.cargo/env
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"

@@ -81,3 +81,16 @@ function isPackageInstalled() {
         die 'not implemented yet'
     fi
 }
+
+# Homebrew
+function _isInstalledByHomebrew() {
+    local formula=$1
+
+    brew ls --versions $formula
+    return $?
+}
+function installByHomebrewIfNotExists() {
+    local formula=$1
+
+    _isInstalledByHomebrew $formula || brew install $formula
+}
