@@ -1,5 +1,6 @@
-(load-theme 'monokai t)
+(setq inhibit-startup-message t)
 
+(load-theme 'monokai t)
 (menu-bar-mode -1)
 
 (custom-set-faces
