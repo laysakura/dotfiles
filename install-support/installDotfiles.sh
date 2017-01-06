@@ -81,5 +81,11 @@ elif is_osx; then
     cpDeep $basedir/.RubyMine2016.2/rubymine.vmoptions $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
 fi
 
+# Karabiner-Elements
+if is_osx; then
+    mkdir -p $HOME/.karabiner.d/configuration
+    cpDeep $basedir/.karabiner.d/configuration/karabiner.json $HOME/.karabiner.d/configuration/
+fi
+
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
