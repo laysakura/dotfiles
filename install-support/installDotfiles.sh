@@ -45,7 +45,7 @@ cpDeep $basedir/.octaverc $HOME/
 # gdb
 cpDeep $basedir/.gdbinit $HOME/
 
-# autostarts
+# .config
 cpDeep $basedir/.config $HOME/
 
 # OS X keymap
@@ -79,12 +79,6 @@ if is_linux; then
 elif is_osx; then
     mkdir -p $HOME/Library/Preferences/RubyMine2016.2
     cpDeep $basedir/.RubyMine2016.2/rubymine.vmoptions $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
-fi
-
-# Karabiner-Elements
-if is_osx; then
-    mkdir -p $HOME/.config/karabiner/configuration
-    cpDeep $basedir/.karabiner.d/configuration/karabiner.json $HOME/.karabiner.d/configuration/
 fi
 
 # GoldenDict
