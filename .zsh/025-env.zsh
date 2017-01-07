@@ -11,6 +11,8 @@ export EDITOR=vim  # just for speed..
 
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
+export PATH=$HOME/usr/local/bin:$PATH
+export PATH=$HOME/usr/bin:$PATH
 
 # less
 export LESS='-i -M -R -S -W -x4'
