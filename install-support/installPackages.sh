@@ -73,7 +73,7 @@ function runInstallPackages() {
     installPackage pyenv
     installPackage readline
     installPackage reattach-to-user-namespace
-    installPackage sbt
+    #installPackage sbt
     installPackage tmux
     installPackage vim
     installPackage wget
