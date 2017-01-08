@@ -61,7 +61,7 @@ function runInstallPackages() {
     installPackage awscli
     installPackage bash
     installPackage emacs
-    installPackage flyway
+    #installPackage flyway
     installPackage git
     installPackage gnu-sed
     installPackage libevent
