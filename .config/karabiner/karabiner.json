@@ -19,12 +19,16 @@
             "name": "Default profile",
             "selected": true,
             "simple_modifications": {
+                "application": "left_command",
                 "caps_lock": "left_control",
                 "international1": "grave_accent_and_tilde",
                 "international3": "grave_accent_and_tilde",
                 "japanese_pc_nfer": "japanese_eisuu",
                 "japanese_pc_xfer": "japanese_kana",
                 "print_screen": "right_command"
+            },
+            "virtual_hid_keyboard": {
+                "keyboard_type": "ansi"
             }
         }
     ]
