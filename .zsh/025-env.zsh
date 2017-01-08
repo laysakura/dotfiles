@@ -38,7 +38,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # golang
-export GOROOT=$HOME/.go
+export GOROOT=$HOME/usr/local
 export GOPATH=$HOME/.ghq
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
