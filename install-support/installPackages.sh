@@ -54,7 +54,7 @@ function runInstallPackages() {
     # 色んなパッケージマネージャのインストール
     installPackage go  # go get
     installPackage cask
-    has ghq || (mkdir -p $GOROOT ; go get github.com/motemen/ghq)
+    has ghq || go get github.com/motemen/ghq
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
 
     # root package managerでインストールする諸々
