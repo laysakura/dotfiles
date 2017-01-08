@@ -70,7 +70,7 @@ if is_linux; then
     cpDeep $basedir/.IdeaIC2016.2 $HOME/
 elif is_osx; then
     mkdir -p $HOME/Library/Preferences/IdeaIC2016.2
-    cpDeep $basedir/.IdeaIC2016.2/idea64.vmoptions $HOME/Library/Preferences/IdeaIC2016.2/idea.vmoptions
+    cpDeep $basedir/.IdeaIC2016.2/idea64.vmoptions $HOME/Library/Preferences/IntelliJIdea2016.3/idea.vmoptions
 fi
 
 # RubyMine
