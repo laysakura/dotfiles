@@ -61,7 +61,7 @@ function runInstallPackages() {
     installPackage awscli
     installPackage bash
     installPackage emacs
-    #installPackage flyway
+    installPackage flyway
     installPackage git
     installPackage gnu-sed
     installPackage libevent
@@ -73,7 +73,7 @@ function runInstallPackages() {
     installPackage pyenv
     installPackage readline
     installPackage reattach-to-user-namespace
-    #installPackage sbt
+    installPackage sbt
     installPackage tmux
     installPackage vim
     installPackage wget
