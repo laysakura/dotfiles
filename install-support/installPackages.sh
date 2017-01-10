@@ -58,6 +58,7 @@ function runInstallPackages() {
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
 
     # root package managerでインストールする諸々
+    installPackage ant
     installPackage awscli
     installPackage bash
     installPackage emacs
