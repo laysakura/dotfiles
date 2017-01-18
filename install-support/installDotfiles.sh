@@ -45,6 +45,9 @@ cpDeep $basedir/.octaverc $HOME/
 # gdb
 cpDeep $basedir/.gdbinit $HOME/
 
+# mysql
+cpDeep $basedir/.my.cnf $HOME/
+
 # .config
 cpDeep $basedir/.config $HOME/
 
