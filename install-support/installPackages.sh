@@ -77,6 +77,7 @@ function runInstallPackages() {
     installPackage sbt
     installPackage tmux
     installPackage vim
+    installPackage watch
     installPackage wget
     installPackage zsh
 
