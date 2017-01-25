@@ -120,6 +120,11 @@ function runInstallPackages() {
         has gsed || installPackage gnu-sed
     fi
 
+    # mac専用パッケージのインストール
+    if is_osx; then
+        brew tap homebrew/services
+    fi
+
     # ubuntu専用パッケージのインストール
     if is_ubuntu; then
         (isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata)
