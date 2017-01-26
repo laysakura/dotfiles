@@ -17,7 +17,7 @@ export PATH=$HOME/usr/bin:$PATH
 export PATH=$HOME/usr/sbin:$PATH
 
 # less
-export LESS='-i -M -R -S -W -x4'
+export LESS='-i -M -R -W -x4'
 
 # rust
 export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
