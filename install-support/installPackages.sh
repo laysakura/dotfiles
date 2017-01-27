@@ -65,6 +65,7 @@ function runInstallPackages() {
     installPackage flyway
     installPackage git
     installPackage gnu-sed
+    installPackage jq
     installPackage libevent
     installPackage libssh2
     installPackage mysql
