@@ -15,8 +15,11 @@
 (depends-on "flycheck-rust")
 (depends-on "rustfmt")
 
-(depends-on "toml-mode")
-
 (depends-on "markdown-mode")
 (depends-on "json-mode")
 (depends-on "yaml-mode")
+(depends-on "toml-mode")
+
+(depends-on "thrift-mode")
+
+(depends-on "scala-mode2")
