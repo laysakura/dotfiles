@@ -86,3 +86,6 @@ fi
 
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
+
+# 雑多なスクリプト
+cpDeep $basedir/myscripts/* $HOME/usr/bin/

@@ -1,0 +1,2 @@
+#!/bin/sh
+open -W -a $HOME/Applications/Meld.app $*
