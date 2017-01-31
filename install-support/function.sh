@@ -94,3 +94,16 @@ function installByHomebrewIfNotExists() {
 
     _isInstalledByHomebrew $formula || brew install $formula
 }
+
+# Homebrew cask
+function _isInstalledByHomebrewCask() {
+    local formula=$1
+
+    brew cask ls --versions $formula
+    return $?
+}
+function installByHomebrewCaskIfNotExists() {
+    local formula=$1
+
+    _isInstalledByHomebrewCask $formula || brew cask install $formula
+}

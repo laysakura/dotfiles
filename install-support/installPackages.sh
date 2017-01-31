@@ -30,6 +30,16 @@ function installPackage() {
     fi
 }
 
+function installHomebrewCaskPackage() {
+    local package=$1
+
+    if is_osx; then
+        installByHomebrewCaskIfNotExists $package
+    else
+        die "Cannot detect `ostype`'s package manager"
+    fi
+}
+
 function installRootPackageManager() {
     if is_osx; then
         # $HOME/.hommebrew にHomebrewをインストール
@@ -117,12 +127,11 @@ function runInstallPackages() {
 
     # osx専用パッケージのインストール
     if is_osx; then
-        has reattach-to-user-namespace || installPackage reattach-to-user-namespace  # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
-        has gsed || installPackage gnu-sed
-    fi
+        installPackage reattach-to-user-namespace  # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
+        installPackage gnu-sed
 
-    # mac専用パッケージのインストール
-    if is_osx; then
+        installHomebrewCaskPackage meld
+
         brew tap homebrew/services
     fi
 

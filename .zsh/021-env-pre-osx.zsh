@@ -6,6 +6,7 @@ export PATH=$BREWPATH/bin:$PATH
 export PATH=$BREWPATH/sbin:$PATH
 export MANPATH=$BREWPATH/share/man:${MANPATH:-}
 export INFOPATH=$BREWPATH/share/info:${INFOPATH:-}
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
 
 # Java
 export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home`
