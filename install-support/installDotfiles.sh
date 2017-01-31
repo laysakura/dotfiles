@@ -88,4 +88,4 @@ fi
 cpDeep $basedir/.goldendict $HOME/
 
 # 雑多なスクリプト
-cpDeep $basedir/myscripts/* $HOME/usr/bin/
+cpDeep $basedir/myscripts/* $HOME/usr/local/bin/
