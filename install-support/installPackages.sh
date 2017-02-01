@@ -87,6 +87,7 @@ function runInstallPackages() {
     installPackage reattach-to-user-namespace
     installPackage sbt
     installPackage tmux
+    installPackage tree
     installPackage vim
     installPackage watch
     installPackage wget
