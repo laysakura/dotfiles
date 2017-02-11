@@ -75,6 +75,7 @@ function runInstallPackages() {
     installPackage flyway
     installPackage git
     installPackage gnu-sed
+    installPackage hub
     installPackage jq
     installPackage libevent
     installPackage libssh2
