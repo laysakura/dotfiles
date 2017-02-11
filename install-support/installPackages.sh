@@ -70,6 +70,7 @@ function runInstallPackages() {
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
         git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
         rbenv install 2.4.0
+        rbenv global 2.4.0
     fi
 
     # root package managerでインストールする諸々
