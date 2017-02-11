@@ -1,0 +1,83 @@
+#!/bin/sh -eu
+
+# =========================================================
+# Functions
+# =========================================================
+## Functions: logger
+function logError() {
+    printf "\033[31m%s\033[m\n" "[ERROR] $*" 1>&2
+}
+function logWarn() {
+    printf "\033[33m%s\033[m\n" "[WARN]  $*" 1>&2
+}
+function logInfo() {
+    printf "\033[36m%s\033[m\n" "[INFO]  $*" 1>&2
+}
+function logOk() {
+    printf "\033[32m%s\033[m\n" "[OK]    $*" 1>&2
+}
+function die() {
+    logError "$*"
+    exit 1
+}
+
+## Functions: app specific
+function showHelpAndDie() {
+    cat 1>&2 <<EOF
+Create template project copied from https://github.com/laysakura/finatra-thrift-simple-sample
+
+# Usage example
+
+$progName new finatra-great-filter greatfilter
+
+# Parameters
+
+## $progName new
+
+$progName new GITHUB_REPO_NAME SCALA_PACKAGE_NAME
+EOF
+    exit 1
+}
+
+## =========================================================
+## Main process
+## =========================================================
+function run() {
+    local progName=$0
+
+    [ $# -eq 3 ] || showHelpAndDie
+
+    local subCmd=$1
+    local githubRepoName=$2
+    local scalaPkgName=$3
+
+    ## Check arguments
+    [ "$subCmd" = "new" ] || showHelpAndDie
+
+    # Clone finatra-thrift-simple-sample from GitHub
+    git clone git@github.com:laysakura/finatra-thrift-simple-sample.git $githubRepoName
+    cd $githubRepoName
+
+    # Replace everythin...
+    git ls-files |xargs gsed -i "s/finatra-thrift-simple-sample/$githubRepoName/g"
+    git ls-files |xargs gsed -i "s/simplesample/$scalaPkgName/g"
+    for f in $(git ls-files |grep simplesample); do
+        f_to=$(echo $f |gsed -e "s/simplesample/$scalaPkgName/")
+        mkdir -p $(dirname $f_to)
+        mv $f $f_to
+    done
+
+    # new git repo
+    rm -rf .git/
+    git init
+    git add .
+    git commit -m 'initial commit: copied from https://github.com/laysakura/finatra-thrift-simple-sample'
+
+    # push to your GitHub
+    hub create
+    git push origin master
+
+    # enable travis
+    travis enable
+}
+run $@
