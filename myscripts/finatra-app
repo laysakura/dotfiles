@@ -3,26 +3,10 @@
 # =========================================================
 # Functions
 # =========================================================
-## Functions: logger
-function logError() {
-    printf "\033[31m%s\033[m\n" "[ERROR] $*" 1>&2
-}
-function logWarn() {
-    printf "\033[33m%s\033[m\n" "[WARN]  $*" 1>&2
-}
-function logInfo() {
-    printf "\033[36m%s\033[m\n" "[INFO]  $*" 1>&2
-}
-function logOk() {
-    printf "\033[32m%s\033[m\n" "[OK]    $*" 1>&2
-}
-function die() {
-    logError "$*"
-    exit 1
-}
-
 ## Functions: app specific
 function showHelpAndDie() {
+    local progName=$1
+
     cat 1>&2 <<EOF
 Create template project copied from https://github.com/laysakura/finatra-thrift-simple-sample
 
@@ -45,7 +29,7 @@ EOF
 function run() {
     local progName=$0
 
-    [ $# -eq 3 ] || showHelpAndDie
+    [ $# -eq 3 ] || showHelpAndDie $progName
 
     local subCmd=$1
     local githubRepoName=$2
