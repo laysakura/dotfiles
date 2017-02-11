@@ -75,9 +75,11 @@ function run() {
 
     # push to your GitHub
     hub create
-    git push origin master
 
     # enable travis
     travis enable
+
+    # push initial commit and run test
+    git push origin master
 }
 run $@
