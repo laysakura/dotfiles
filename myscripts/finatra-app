@@ -3,6 +3,11 @@
 # =========================================================
 # Functions
 # =========================================================
+## Functions: utilities
+function say() {
+    echo $* >&2
+}
+
 ## Functions: app specific
 function showHelpAndDie() {
     local progName=$1
@@ -42,6 +47,20 @@ function run() {
     git clone git@github.com:laysakura/finatra-thrift-simple-sample.git $githubRepoName
     cd $githubRepoName
 
+    # Select branch
+    git fetch -p
+    say
+    say 'Select a branch to use:'
+    select gitBranch in $(git branch -r |cut -c 10- |awk '{ print $1 }' |sort); do
+        if [ -z "$gitBranch" ]; then
+            continue
+        else
+            break
+        fi
+    done
+    say "You selected $REPLY) $gitBranch"
+    git checkout $gitBranch
+
     # Replace everythin...
     git ls-files |xargs gsed -i "s/finatra-thrift-simple-sample/$githubRepoName/g"
     git ls-files |xargs gsed -i "s/simplesample/$scalaPkgName/g"
@@ -65,5 +84,9 @@ function run() {
 
     # push initial commit and run test
     git push origin master
+
+    # finish!
+    say "Successfully created $githubRepoName in:"
+    say "	`pwd`"
 }
 run $@
