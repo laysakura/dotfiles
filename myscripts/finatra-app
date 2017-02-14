@@ -1,0 +1,92 @@
+#!/bin/sh -eu
+
+# =========================================================
+# Functions
+# =========================================================
+## Functions: utilities
+function say() {
+    echo $* >&2
+}
+
+## Functions: app specific
+function showHelpAndDie() {
+    local progName=$1
+
+    cat 1>&2 <<EOF
+Create template project copied from https://github.com/laysakura/finatra-thrift-simple-sample
+
+# Usage example
+
+$progName new finatra-great-filter greatfilter
+
+# Parameters
+
+## $progName new
+
+$progName new GITHUB_REPO_NAME SCALA_PACKAGE_NAME
+EOF
+    exit 1
+}
+
+## =========================================================
+## Main process
+## =========================================================
+function run() {
+    local progName=$0
+
+    [ $# -eq 3 ] || showHelpAndDie $progName
+
+    local subCmd=$1
+    local githubRepoName=$2
+    local scalaPkgName=$3
+
+    ## Check arguments
+    [ "$subCmd" = "new" ] || showHelpAndDie
+
+    # Clone finatra-thrift-simple-sample from GitHub
+    git clone git@github.com:laysakura/finatra-thrift-simple-sample.git $githubRepoName
+    cd $githubRepoName
+
+    # Select branch
+    git fetch -p
+    say
+    say 'Select a branch to use:'
+    select gitBranch in $(git branch -r |cut -c 10- |awk '{ print $1 }' |sort); do
+        if [ -z "$gitBranch" ]; then
+            continue
+        else
+            break
+        fi
+    done
+    say "You selected $REPLY) $gitBranch"
+    git checkout $gitBranch
+
+    # Replace everythin...
+    git ls-files |xargs gsed -i "s/finatra-thrift-simple-sample/$githubRepoName/g"
+    git ls-files |xargs gsed -i "s/simplesample/$scalaPkgName/g"
+    for f in $(git ls-files |grep simplesample); do
+        f_to=$(echo $f |gsed -e "s/simplesample/$scalaPkgName/")
+        mkdir -p $(dirname $f_to)
+        mv $f $f_to
+    done
+
+    # new git repo
+    rm -rf .git/
+    git init
+    git add .
+    git commit -m 'initial commit: copied from https://github.com/laysakura/finatra-thrift-simple-sample'
+
+    # push to your GitHub
+    hub create
+
+    # enable travis
+    travis enable
+
+    # push initial commit and run test
+    git push origin master
+
+    # finish!
+    say "Successfully created $githubRepoName in:"
+    say "	`pwd`"
+}
+run $@

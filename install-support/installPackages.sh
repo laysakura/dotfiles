@@ -66,6 +66,12 @@ function runInstallPackages() {
     installPackage cask
     has ghq || go get github.com/motemen/ghq
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
+    if ! has rbenv; then  # gem i
+        git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+        git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+        rbenv install 2.4.0
+        rbenv global 2.4.0
+    fi
 
     # root package managerでインストールする諸々
     installPackage ant
@@ -75,6 +81,7 @@ function runInstallPackages() {
     installPackage flyway
     installPackage git
     installPackage gnu-sed
+    installPackage hub
     installPackage jq
     installPackage libevent
     installPackage libssh2
@@ -109,6 +116,9 @@ function runInstallPackages() {
     # ghqでインストール
     ghq get rust-lang/rust
 
+    # gemでインストール
+    gem i travis
+
     # その他のコマンドでインストール
     test -d $HOME/.zplug || (curl -sL zplug.sh/installer |zsh)
 
@@ -118,11 +128,6 @@ function runInstallPackages() {
     fi
 
     has scalaenv || git clone git://github.com/mazgi/scalaenv.git ~/.scalaenv
-
-    if ! has rbenv; then
-        git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
-        git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-    fi
 
     has nodebrew || (curl -L git.io/nodebrew |perl - setup)
 
