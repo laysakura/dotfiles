@@ -94,6 +94,7 @@ function runInstallPackages() {
     installPackage readline
     installPackage reattach-to-user-namespace
     installPackage sbt
+    installPackage the_silver_searcher
     installPackage tmux
     installPackage tree
     installPackage vim

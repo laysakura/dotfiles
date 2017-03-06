@@ -28,6 +28,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 # scala
 export PATH=$HOME/.scalaenv/bin:$PATH
 eval "$(scalaenv init -)"
+export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M"
 
 # flyway
 export PATH=$HOME/.flyway:$PATH
