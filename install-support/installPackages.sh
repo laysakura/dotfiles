@@ -81,6 +81,7 @@ function runInstallPackages() {
     installPackage flyway
     installPackage git
     installPackage gnu-sed
+    installPackage graphicsmagick
     installPackage hub
     installPackage imagemagick
     installPackage jq
