@@ -82,6 +82,7 @@ function runInstallPackages() {
     installPackage git
     installPackage gnu-sed
     installPackage hub
+    installPackage imagemagick
     installPackage jq
     installPackage libevent
     installPackage libssh2
