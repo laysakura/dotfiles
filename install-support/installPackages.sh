@@ -93,6 +93,7 @@ function runInstallPackages() {
     installPackage pyenv
     installPackage readline
     installPackage reattach-to-user-namespace
+    installPackage redis
     installPackage sbt
     installPackage the_silver_searcher
     installPackage tmux
