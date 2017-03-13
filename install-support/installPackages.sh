@@ -83,7 +83,6 @@ function runInstallPackages() {
     installPackage gnu-sed
     installPackage graphicsmagick
     installPackage hub
-    installPackage imagemagick
     installPackage jq
     installPackage libevent
     installPackage libssh2
