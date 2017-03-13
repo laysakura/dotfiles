@@ -133,6 +133,8 @@ function runInstallPackages() {
 
     has nodebrew || (curl -L git.io/nodebrew |perl - setup)
 
+    has whalebrew || (curl -L "https://github.com/bfirsh/whalebrew/releases/download/0.0.5/whalebrew-$(uname -s)-$(uname -m)" -o $HOME/.bin/whalebrew; chmod +x $HOME/.bin/whalebrew)
+
     # osx専用パッケージのインストール
     if is_osx; then
         installPackage reattach-to-user-namespace  # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
