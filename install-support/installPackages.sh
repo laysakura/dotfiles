@@ -86,6 +86,7 @@ function runInstallPackages() {
     installPackage jq
     installPackage libevent
     installPackage libssh2
+    installPackage maven
     installPackage mycli
     installPackage mysql
     installPackage openssl
