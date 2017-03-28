@@ -7,7 +7,7 @@ export HISTSIZE=100000
 export SAVEHIST=100000
 
 # editor
-export EDITOR=vim  # just for speed..
+export EDITOR=emacs
 
 # HOME PATH
 export PATH=$HOME/.bin:$PATH
