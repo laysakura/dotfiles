@@ -70,10 +70,11 @@ fi
 
 # IntelliJ
 if is_linux; then
-    cpDeep $basedir/.IdeaIC2016.2 $HOME/
+    cpDeep $basedir/IntelliJIdea2017.1 $HOME/
 elif is_osx; then
-    mkdir -p $HOME/Library/Preferences/IdeaIC2016.2
-    cpDeep $basedir/.IdeaIC2016.2/idea64.vmoptions $HOME/Library/Preferences/IntelliJIdea2016.3/idea.vmoptions
+    mkdir -p $HOME/Library/Preferences/IntelliJIdea2017.1
+    cpDeep $basedir/IntelliJIdea2017.1/idea.vmoptions $HOME/Library/Preferences/IntelliJIdea2017.1/idea.vmoptions
+    cpDeep $basedir/IntelliJIdea2017.1/settings.jar $HOME/Library/Preferences/IntelliJIdea2017.1/settings.jar
 fi
 
 # RubyMine
