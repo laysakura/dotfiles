@@ -3,7 +3,7 @@
 .pypirc
 /.ssh
 /.goldendict
-/.sbt/0.13/global.sbt
+/.sbt
 /.config/hub
 
 # Created by https://www.gitignore.io/api/emacs,intellij,rubymine
