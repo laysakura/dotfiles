@@ -82,6 +82,7 @@ function runInstallPackages() {
     installPackage git
     installPackage gnu-sed
     installPackage graphicsmagick
+    installPackage graphviz
     installPackage hub
     installPackage jq
     installPackage libevent
