@@ -159,3 +159,6 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+# p4merge
+*.orig
