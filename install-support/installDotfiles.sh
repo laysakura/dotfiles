@@ -30,6 +30,7 @@ mkdir -p $HOME/.ghq
 
 # scala
 cpDeep $basedir/.sbt $HOME/
+cpDeep $basedir/.sbtrc $HOME/
 
 # ruby
 cpDeep $basedir/.pryrc $HOME/
