@@ -92,6 +92,7 @@ function runInstallPackages() {
     installPackage maven
     installPackage mycli
     installPackage mysql
+    installPackage nkf
     installPackage openssl
     installPackage peco
     installPackage pkg-config
