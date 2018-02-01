@@ -30,6 +30,7 @@ mkdir -p $HOME/.ghq
 
 # scala
 cpDeep $basedir/.sbt $HOME/
+cpDeep $basedir/.sbtrc $HOME/
 
 # ruby
 cpDeep $basedir/.pryrc $HOME/
@@ -70,11 +71,11 @@ fi
 
 # IntelliJ
 if is_linux; then
-    cpDeep $basedir/IntelliJIdea2017.1 $HOME/
+    cpDeep $basedir/IdeaIC2017.2 $HOME/
 elif is_osx; then
-    mkdir -p $HOME/Library/Preferences/IntelliJIdea2017.1
-    cpDeep $basedir/IntelliJIdea2017.1/idea.vmoptions $HOME/Library/Preferences/IntelliJIdea2017.1/idea.vmoptions
-    cpDeep $basedir/IntelliJIdea2017.1/settings.jar $HOME/Library/Preferences/IntelliJIdea2017.1/settings.jar
+    mkdir -p $HOME/Library/Preferences/IdeaIC2017.2
+    cpDeep $basedir/IdeaIC2017.2/idea.vmoptions $HOME/Library/Preferences/IdeaIC2017.2/idea.vmoptions
+    cpDeep $basedir/IdeaIC2017.2/settings.jar $HOME/Library/Preferences/IdeaIC2017.2/settings.jar
 fi
 
 # RubyMine
