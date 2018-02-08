@@ -132,7 +132,7 @@ function runInstallPackages() {
 
     # その他のコマンドでインストール
     if ! has diff-highlight; then
-        curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
+        curl https://raw.githubusercontent.com/git/git/3dbfe2b8ae94cbdae5f3d32581aedaa5510fdc87/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
         chmod +x $HOME/.bin/diff-highlight
     fi
 
