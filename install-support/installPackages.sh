@@ -108,6 +108,7 @@ function runInstallPackages() {
     installPackage vim
     installPackage watch
     installPackage wget
+    installPackage zplug
     installPackage zsh
 
     # caskでインストール
@@ -130,8 +131,6 @@ function runInstallPackages() {
     gem i travis
 
     # その他のコマンドでインストール
-    test -d $HOME/.zplug || (curl -sL zplug.sh/installer |zsh)
-
     if ! has diff-highlight; then
         curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
         chmod +x $HOME/.bin/diff-highlight
