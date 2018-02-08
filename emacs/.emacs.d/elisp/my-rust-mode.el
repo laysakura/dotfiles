@@ -8,5 +8,4 @@
 
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'rust-mode-hook #'rustfmt-enable-on-save)
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)

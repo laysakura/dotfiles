@@ -108,6 +108,7 @@ function runInstallPackages() {
     installPackage vim
     installPackage watch
     installPackage wget
+    installPackage zplug
     installPackage zsh
 
     # caskでインストール
@@ -130,8 +131,6 @@ function runInstallPackages() {
     gem i travis
 
     # その他のコマンドでインストール
-    test -d $HOME/.zplug || (curl -sL zplug.sh/installer |zsh)
-
     if ! has diff-highlight; then
         curl https://raw.githubusercontent.com/git/git/master/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
         chmod +x $HOME/.bin/diff-highlight
@@ -147,8 +146,6 @@ function runInstallPackages() {
     if is_osx; then
         installPackage reattach-to-user-namespace  # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
         installPackage gnu-sed
-
-        installHomebrewCaskPackage meld
 
         brew tap homebrew/services
     fi
