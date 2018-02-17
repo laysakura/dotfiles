@@ -1,2 +1,3 @@
 setopt hist_ignore_dups
 setopt share_history
+setopt interactivecomments
