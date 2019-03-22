@@ -85,6 +85,9 @@ flycheck_*.el
 # IntelliJ
 /out/
 
+# Visual Studio Code
+.vscode/
+
 # mpeltonen/sbt-idea plugin
 .idea_modules/
 

@@ -93,6 +93,7 @@ function runInstallPackages() {
     installPackage mycli
     installPackage mysql
     installPackage nkf
+    installPackage npm
     installPackage openssl
     installPackage peco
     installPackage pkg-config
