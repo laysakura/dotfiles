@@ -28,6 +28,9 @@ cpDeep $basedir/.gitignore $HOME/
 is_msys && (cmd /c "mklink /j C:\home C:\msys64\home" || :)  # MSYS2のghqで /home が \home になって、/c/home を参照しに行ってしまう問題のworkaround
 mkdir -p $HOME/.ghq
 
+# rust
+cpDeep $basedir/.cargo $HOME/
+
 # scala
 cpDeep $basedir/.sbt $HOME/
 cpDeep $basedir/.sbtrc $HOME/
