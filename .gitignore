@@ -5,6 +5,7 @@
 /.goldendict
 /.sbt
 /.config/hub
+/.cargo/credentials
 
 # Created by https://www.gitignore.io/api/emacs,intellij,rubymine
 
