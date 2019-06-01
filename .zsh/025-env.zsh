@@ -16,6 +16,9 @@ export PATH=$HOME/usr/local/sbin:$PATH
 export PATH=$HOME/usr/bin:$PATH
 export PATH=$HOME/usr/sbin:$PATH
 
+# Language
+export LC_ALL=ja_JP.UTF-8
+
 # less
 export LESS='-i -M -R -W -x4'
 
