@@ -1,5 +1,5 @@
 ## インストール
 
 ```bash
-curl https://raw.githubusercontent.com/laysakura/dotfiles/master/install.bash |bash -eu
+curl https://raw.githubusercontent.com/laysakura/dotfiles/master/install.zsh |zsh -eu
 ```
