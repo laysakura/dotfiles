@@ -77,6 +77,7 @@ function runInstallPackages() {
     installPackage ant
     installPackage awscli
     installPackage bash
+    installPackage direnv
     installPackage emacs
     installPackage flyway
     installPackage git
