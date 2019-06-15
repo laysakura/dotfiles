@@ -169,3 +169,6 @@ fabric.properties
 
 # osx
 .DS_Store
+
+# direnv
+.envrc
