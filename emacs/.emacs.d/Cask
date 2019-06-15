@@ -8,12 +8,6 @@
 (depends-on "flycheck")
 (depends-on "flycheck-pos-tip")
 
-(depends-on "rust-mode")
-(depends-on "cargo")
-(depends-on "racer")
-(depends-on "company-racer")
-(depends-on "flycheck-rust")
-
 (depends-on "toml-mode")
 
 (depends-on "markdown-mode")
