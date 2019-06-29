@@ -171,4 +171,4 @@ fabric.properties
 .DS_Store
 
 # direnv
-.envrc
+.env
