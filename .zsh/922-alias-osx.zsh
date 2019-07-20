@@ -7,3 +7,5 @@ alias lla='ls -laG'
 alias l='ls -FG'
 
 alias sed='gsed'
+
+alias tn='terminal-notifier -message'

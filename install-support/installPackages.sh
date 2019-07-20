@@ -103,6 +103,7 @@ function runInstallPackages() {
     installPackage reattach-to-user-namespace
     installPackage redis
     installPackage sbt
+    installPackage terminal-notifier
     installPackage the_silver_searcher
     installPackage tmux
     installPackage tree
