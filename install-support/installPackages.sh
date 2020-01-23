@@ -115,10 +115,6 @@ function runInstallPackages() {
         cask install
     )
 
-    # go getでインストール
-    has peco || go get github.com/peco/peco/cmd/peco
-    has dep || go get github.com/golang/dep/cmd/dep
-
     # gemでインストール
     gem i travis
 
