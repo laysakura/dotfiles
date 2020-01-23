@@ -64,8 +64,11 @@ function runInstallPackages() {
     # 色んなパッケージマネージャのインストール
     installPackage go  # go get
     mkdir -p $GOROOT
+
     installPackage cask
-    has ghq || go get github.com/motemen/ghq
+
+    has ghq || installPackage ghq
+
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
     if ! has rbenv; then  # gem i
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
