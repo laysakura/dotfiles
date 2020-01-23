@@ -19,3 +19,4 @@
 (load-my-elisp "my-flycheck")
 
 (load-my-elisp "my-key-bind")
+(load-my-elisp "my-mouse")
