@@ -99,4 +99,5 @@ fi
 cpDeep $basedir/.goldendict $HOME/
 
 # 雑多なスクリプト
+mkdir -p $HOME/usr/local/bin/
 cp -p $basedir/myscripts/* $HOME/usr/local/bin/
