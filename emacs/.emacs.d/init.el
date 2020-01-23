@@ -18,7 +18,4 @@
 (load-my-elisp "my-company-mode")
 (load-my-elisp "my-flycheck")
 
-(load-my-elisp "my-rust-mode-patch-flycheck-cargo")
-(load-my-elisp "my-rust-mode")
-
 (load-my-elisp "my-key-bind")

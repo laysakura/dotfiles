@@ -4,6 +4,7 @@
 (depends-on "monokai-theme")
 
 (depends-on "company")
+(depends-on "company-racer")
 
 (depends-on "flycheck")
 (depends-on "flycheck-pos-tip")

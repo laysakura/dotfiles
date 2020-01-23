@@ -134,6 +134,9 @@ function runInstallPackages() {
         installPackage gnu-sed
 
         brew tap homebrew/services
+
+        brew tap AdoptOpenJDK/openjdk
+        installHomebrewCaskPackage adoptopenjdk11
     fi
 
     # ubuntu専用パッケージのインストール
