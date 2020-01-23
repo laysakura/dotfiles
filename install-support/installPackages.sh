@@ -73,8 +73,9 @@ function runInstallPackages() {
     if ! has rbenv; then  # gem i
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
         git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-        rbenv install 2.4.0
-        rbenv global 2.4.0
+        ruby_version=$(rbenv install -l | grep -v - | tail -1)
+        rbenv install $ruby_version
+        rbenv global $ruby_version
     fi
 
     # root package managerでインストールする諸々
