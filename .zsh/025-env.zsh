@@ -15,6 +15,8 @@ export PATH=$HOME/usr/local/bin:$PATH
 export PATH=$HOME/usr/local/sbin:$PATH
 export PATH=$HOME/usr/bin:$PATH
 export PATH=$HOME/usr/sbin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 # Language
 export LC_ALL=ja_JP.UTF-8
@@ -27,14 +29,6 @@ export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
 
 # java
 export PATH=$JAVA_HOME/bin:$PATH
-
-# scala
-export PATH=$HOME/.scalaenv/bin:$PATH
-eval "$(scalaenv init -)"
-export SBT_OPTS="-Xms2G -Xmx4G -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxMetaspaceSize=4G"
-
-# flyway
-export PATH=$HOME/.flyway:$PATH
 
 # rust
 test -e $HOME/.cargo/env && . $HOME/.cargo/env
