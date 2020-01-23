@@ -120,9 +120,6 @@ function runInstallPackages() {
     has peco || go get github.com/peco/peco/cmd/peco
     has dep || go get github.com/golang/dep/cmd/dep
 
-    # ghqでインストール
-    ghq get rust-lang/rust
-
     # gemでインストール
     gem i travis
 
@@ -131,8 +128,6 @@ function runInstallPackages() {
         curl https://raw.githubusercontent.com/git/git/3dbfe2b8ae94cbdae5f3d32581aedaa5510fdc87/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
         chmod +x $HOME/.bin/diff-highlight
     fi
-
-    has scalaenv || git clone git://github.com/mazgi/scalaenv.git ~/.scalaenv
 
     has nodebrew || (curl -L git.io/nodebrew |perl - setup)
 
