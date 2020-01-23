@@ -92,7 +92,7 @@ fi
 # Visual Studio Code
 if is_osx; then
     mkdir -p $HOME/Library/Application\ Support/Code
-    cpDeep $basedir/vscode/* $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
+    cpDeep $basedir/vscode/* $HOME/Library/Application\ Support/Code
 fi
 
 # GoldenDict
