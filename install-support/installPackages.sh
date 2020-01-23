@@ -70,6 +70,7 @@ function runInstallPackages() {
     has ghq || installPackage ghq
 
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
+
     if ! has rbenv; then  # gem i
         git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
         git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
@@ -79,25 +80,17 @@ function runInstallPackages() {
     fi
 
     # root package managerでインストールする諸々
-    installPackage ant
     installPackage awscli
     installPackage bash
     installPackage direnv
     installPackage emacs
-    installPackage flyway
     installPackage git
     installPackage gnu-sed
     installPackage graphicsmagick
     installPackage graphviz
-    installPackage gradle
-    installPackage groovy
-    installPackage hub
     installPackage jq
     installPackage libevent
     installPackage libssh2
-    installPackage maven
-    installPackage mycli
-    installPackage mysql
     installPackage nkf
     installPackage npm
     installPackage openssl
@@ -106,8 +99,6 @@ function runInstallPackages() {
     installPackage pyenv
     installPackage readline
     installPackage reattach-to-user-namespace
-    installPackage redis
-    installPackage sbt
     installPackage terminal-notifier
     installPackage the_silver_searcher
     installPackage tmux
