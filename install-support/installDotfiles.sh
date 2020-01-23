@@ -92,7 +92,7 @@ fi
 # Visual Studio Code
 if is_osx; then
     mkdir -p "$HOME/Library/Application Support/Code"
-    cpDeep $basedir/vscode/* '"$HOME/Library/Application Support/Code"'  # cpDeepの中で展開されたときにダブルクオートが残るように
+    cpDeep $basedir/vscode/* "$HOME/Library/Application\ Support/Code"  # cpDeepの中で展開されたときにバックスラッシュが残るように
 fi
 
 # GoldenDict
