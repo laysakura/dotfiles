@@ -103,7 +103,6 @@ function runInstallPackages() {
     installPackage the_silver_searcher
     installPackage tmux
     installPackage tree
-    installPackage typesafe-activator
     installPackage vim
     installPackage watch
     installPackage wget
