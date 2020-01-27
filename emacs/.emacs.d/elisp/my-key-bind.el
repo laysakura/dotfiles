@@ -7,7 +7,7 @@
 (global-set-key "\C-x\C-p" 'other-window-backward)
 (global-set-key "\C-xg" 'goto-line)
 (global-set-key "\C-x\C-g" 'grep)
-(global-set-key "\C-\\" 'redo)
+(global-set-key "\C-\\" 'undo-tree-redo)
 (global-set-key "\M-h" 'backward-kill-word)
 
 (global-set-key "\M-n" 'flycheck-next-error)

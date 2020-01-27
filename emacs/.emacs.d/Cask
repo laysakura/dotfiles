@@ -1,6 +1,8 @@
 (source gnu)
 (source melpa)
 
+(depends-on "undo-tree")
+
 (depends-on "monokai-theme")
 
 (depends-on "company")

@@ -15,6 +15,7 @@
 (load-my-elisp "my-view")
 (load-my-elisp "my-global-setting")
 
+(load-my-elisp "my-undo-tree")
 (load-my-elisp "my-company-mode")
 (load-my-elisp "my-flycheck")
 
