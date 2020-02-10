@@ -89,6 +89,7 @@ function runInstallPackages() {
     installPackage graphicsmagick
     installPackage graphviz
     installPackage jq
+    installPackage lazydocker
     installPackage libevent
     installPackage libssh2
     installPackage nkf
