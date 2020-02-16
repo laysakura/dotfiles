@@ -66,11 +66,17 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>650 498 620 392 0 0 1920 1057 </string>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>580 0 1340 1057 0 0 1920 1057 </string>
+	<string>494 0 1186 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>910 337 654 690 0 0 1680 1027 </string>
+	<string>62 82 1613 945 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>233 78 570 452 0 0 1680 1027 </string>
+	<key>NeverWarnAboutShortLivedSessions_04A8CA25-30CC-4637-8954-89351C5B4C9A</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_04A8CA25-30CC-4637-8954-89351C5B4C9A_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -689,7 +695,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>8287FAA5-97DD-43F4-A193-19EC31CE4804</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>5</integer>
+	<integer>9</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1455,6 +1461,8 @@
 	<string>~/.ghq/src/github.com/laysakura/dotfiles</string>
 	<key>PromptOnQuit</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1464,11 +1472,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-02-03T07:58:11Z</date>
+	<date>2020-02-14T08:01:38Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
-	<key>SUSkippedVersion</key>
-	<string>3.3.8</string>
+	<key>SUUpdateRelaunchingMarker</key>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
