@@ -48,3 +48,6 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 # kdb+
 export QHOME=$HOME/.q
 export PATH=$QHOME/l32:$PATH
+
+# Papilio-Loader
+export PATH=/Applications/GadgetFactory/Papilio-Loader/Java-GUI/programmer/macosx:$PATH

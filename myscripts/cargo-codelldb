@@ -1,0 +1,47 @@
+#!/bin/sh -eu
+
+# =========================================================
+# Functions
+# =========================================================
+## Functions: utilities
+function say() {
+    echo $* >&2
+}
+
+## Functions: app specific
+function showHelpAndDie() {
+    local progName=$1
+
+    cat 1>&2 <<EOF
+Create files to enable Rust unit tests' debugging on VSCode.
+
+Demo Tweet: https://twitter.com/laysakura/status/1221796919573221377
+
+Creating files described here: https://github.com/vadimcn/vscode-lldb/blob/master/MANUAL.md#applications
+EOF
+    exit 1
+}
+
+## =========================================================
+## Main process
+## =========================================================
+function run() {
+    local progName=$0
+    [ $# -eq 0 ] || showHelpAndDie $progName
+
+    mkdir -p .cargo
+
+    cat >> .cargo/config <<'EOF'
+[target.x86_64-apple-darwin]
+runner = ".cargo/codelldb"
+EOF
+
+    cat > .cargo/codelldb <<'EOF'
+#!/bin/bash
+code --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
+EOF
+
+    # finish!
+    say "Successfully created/updated files in $PWD/.cargo/"
+}
+run $@
