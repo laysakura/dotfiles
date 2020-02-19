@@ -40,6 +40,7 @@ EOF
 #!/bin/bash
 code --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
 EOF
+    chmod +x .cargo/codelldb
 
     # finish!
     say "Successfully created/updated files in $PWD/.cargo/"
