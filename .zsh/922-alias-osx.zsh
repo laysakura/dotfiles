@@ -9,3 +9,5 @@ alias l='ls -FG'
 alias sed='gsed'
 
 alias tn='terminal-notifier -message'
+
+alias aktdk='~/.ghq/src/github.com/Idein/actdk/target/debug/actdk'
