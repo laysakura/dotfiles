@@ -10,4 +10,4 @@ alias sed='gsed'
 
 alias tn='terminal-notifier -message'
 
-alias aktdk='~/.ghq/src/github.com/Idein/actdk/target/debug/actdk'
+alias actdk='~/.ghq/src/github.com/Idein/actdk/target/debug/actdk'
