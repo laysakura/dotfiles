@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AllowClipboardAccess</key>
+	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
 	<key>ApplePressAndHoldEnabled</key>
@@ -227,6 +229,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>04A8CA25-30CC-4637-8954-89351C5B4C9A</string>
+	<key>DoubleClickPerformsSmartSelection</key>
+	<false/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -283,11 +287,11 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>165 0 1515 1027 0 0 1680 1027 </string>
+	<string>0 0 1558 1027 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 575 585 452 0 0 1680 1027 </string>
+	<string>318 7 1362 1013 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>6 556 570 452 0 0 1680 1027 </string>
+	<string>1680 424 1920 1057 1680 424 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_04A8CA25-30CC-4637-8954-89351C5B4C9A</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_04A8CA25-30CC-4637-8954-89351C5B4C9A_selection</key>
@@ -954,7 +958,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>8287FAA5-97DD-43F4-A193-19EC31CE4804</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>14</integer>
+	<integer>17</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1727,7 +1731,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-03-12T00:09:17Z</date>
+	<date>2020-03-28T00:46:41Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
