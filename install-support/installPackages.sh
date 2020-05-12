@@ -69,7 +69,7 @@ function runInstallPackages() {
     # 色んなパッケージマネージャのインストール
 
     ## go get
-    if ! has_go; then
+    if ! has go; then
         if is_osx; then
             installPackage go
         elif is_ubuntu; then
