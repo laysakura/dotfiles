@@ -17,7 +17,7 @@ function installPackage() {
     if is_linux; then
         if is_ubuntu; then
             logInfo "Installing $package ..."
-            sudo apt install $package
+            sudo apt install -y $package
         else
             logWarn 'Linux package installation is only supported in Ubuntu'
         fi
