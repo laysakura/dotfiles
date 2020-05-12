@@ -67,7 +67,7 @@ function runInstallPackages() {
     (installPackage go || installPackage golang)  # go get
     mkdir -p $GOROOT
 
-    installPackage cask
+    is_osx && installPackage cask || :
 
     has ghq || installPackage ghq
 
