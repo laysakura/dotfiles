@@ -69,12 +69,14 @@ function runInstallPackages() {
     # 色んなパッケージマネージャのインストール
 
     ## go get
-    if is_osx; then
-        installPackage go
-    elif is_ubuntu; then
-        sudo add-apt-repository ppa:longsleep/golang-backports
-        sudo apt update
-        sudo apt install golang-go
+    if ! has_go; then
+        if is_osx; then
+            installPackage go
+        elif is_ubuntu; then
+            sudo add-apt-repository ppa:longsleep/golang-backports
+            sudo apt update
+            sudo apt install golang-go
+        fi
     fi
     mkdir -p $GOROOT
 
