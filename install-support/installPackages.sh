@@ -64,7 +64,7 @@ function runInstallPackages() {
     is_osx || installPackage unzip
 
     # 色んなパッケージマネージャのインストール
-    installPackage go  # go get
+    (installPackage go || installPackage golang)  # go get
     mkdir -p $GOROOT
 
     installPackage cask
