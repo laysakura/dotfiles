@@ -67,7 +67,15 @@ function runInstallPackages() {
     installPackage zsh
 
     # 色んなパッケージマネージャのインストール
-    (installPackage go || installPackage golang)  # go get
+
+    ## go get
+    if is_osx; then
+        installPackage go
+    elif is_ubuntu; then
+        sudo add-apt-repository ppa:longsleep/golang-backports
+        sudo apt update
+        sudo apt install golang-go
+    fi
     mkdir -p $GOROOT
 
     is_osx && installPackage cask || :
