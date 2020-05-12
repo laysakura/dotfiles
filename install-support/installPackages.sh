@@ -44,6 +44,8 @@ function installRootPackageManager() {
     if is_osx; then
         # $HOME/.hommebrew にHomebrewをインストール
         has brew || curl -L https://gist.githubusercontent.com/kenchan0130/b2b5fec12a8f5e08bb9a3556e2d8bcca/raw | ruby
+    elif is_ubuntu; then
+        has apt  # assertion
     else
         die "Not implemented yet"
     fi
