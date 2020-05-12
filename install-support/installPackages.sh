@@ -57,11 +57,14 @@ function runInstallPackages() {
 
     mkdir -p $HOME_BIN
 
-    # 色んなパッケージマネージャのインストールに必要なパッケージ
+    # 何をインストールするにせよ必要なパッケージ
     installPackage gcc
     installPackage binutils
     installPackage autoconf
     is_osx || installPackage unzip
+
+    # 途中でコケたときの復旧とか楽にするため、配置済みの .zsh/ は読んでくれるzshを先んじてインストール
+    installPackage zsh
 
     # 色んなパッケージマネージャのインストール
     (installPackage go || installPackage golang)  # go get
@@ -110,7 +113,6 @@ function runInstallPackages() {
     installPackage watch
     installPackage wget
     installPackage zplug
-    installPackage zsh
 
     # caskでインストール
     (
