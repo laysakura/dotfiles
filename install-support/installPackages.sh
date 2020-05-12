@@ -69,7 +69,7 @@ function runInstallPackages() {
 
     is_osx && installPackage cask || :
 
-    has ghq || installPackage ghq
+    has ghq || go get github.com/motemen/ghq
 
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
 
