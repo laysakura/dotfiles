@@ -80,7 +80,8 @@ function runInstallPackages() {
     fi
     mkdir -p $GOROOT
 
-    is_osx && installPackage cask || :
+    # emacs cask
+    has cask || curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
     has ghq || go get github.com/motemen/ghq
 
