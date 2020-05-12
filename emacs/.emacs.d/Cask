@@ -1,7 +1,8 @@
 (source gnu)
 (source melpa)
 
-(depends-on "undo-tree")
+; cannot find undo-tree package...
+; (depends-on "undo-tree")
 
 (depends-on "monokai-theme")
 
