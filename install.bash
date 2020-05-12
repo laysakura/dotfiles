@@ -51,13 +51,13 @@ function die() {
 
 # Unity上でのdbusの問題を解決するおまじない -> http://askubuntu.com/questions/457016/how-to-change-gsettings-via-remote-shell
 function dbusUnityMagic() {
-    # Search these processes for the session variable 
+    # Search these processes for the session variable
     # (they are run as the current user and have the DBUS session variable set)
     compatiblePrograms=( nautilus kdeinit kded4 pulseaudio trackerd )
 
     # Attempt to get a program pid
     for index in ${compatiblePrograms[@]}; do
-        PID=$(pidof -s ${index})
+        PID=$(pidof -s ${index} || :)
         if [[ "${PID}" != "" ]]; then
             break
         fi

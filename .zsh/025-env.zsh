@@ -10,7 +10,7 @@ export SAVEHIST=100000
 export EDITOR=emacs
 
 # HOME PATH
-export PATH=$HOME/.local/bin
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.bin:$PATH
 export PATH=$HOME/usr/local/bin:$PATH
 export PATH=$HOME/usr/local/sbin:$PATH
