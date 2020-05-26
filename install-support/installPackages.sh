@@ -104,12 +104,6 @@ function runInstallPackages() {
         cask install
     )
 
-    # その他のコマンドでインストール
-    if ! has diff-highlight; then
-        curl https://raw.githubusercontent.com/git/git/3dbfe2b8ae94cbdae5f3d32581aedaa5510fdc87/contrib/diff-highlight/diff-highlight -o $HOME/.bin/diff-highlight
-        chmod +x $HOME/.bin/diff-highlight
-    fi
-
     # osx専用パッケージのインストール
     if is_osx; then
         installPackage reattach-to-user-namespace  # see: http://totutotu.hatenablog.com/entry/2015/07/26/tmux%E3%81%A7OSX%E3%81%AEopen%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E4%BD%BF%E3%81%88%E3%81%AA%E3%81%84
