@@ -78,7 +78,6 @@ function runInstallPackages() {
             sudo apt install golang-go
         fi
     fi
-    mkdir -p $GOROOT
 
     # emacs cask
     has cask || curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
