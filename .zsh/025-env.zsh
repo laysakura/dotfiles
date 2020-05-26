@@ -58,4 +58,4 @@ export PATH=/Applications/GadgetFactory/Papilio-Loader/Java-GUI/programmer/macos
 
 # jetson
 export PATH=/usr/local/cuda-10.2/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:${LD_LIBRARY_PATH:-}
