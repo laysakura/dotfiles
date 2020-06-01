@@ -81,6 +81,7 @@ function runInstallPackages() {
     fi
 
     # emacs cask
+    installPackage emacs
     has cask || curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
 
     has ghq || go get github.com/motemen/ghq
@@ -88,7 +89,6 @@ function runInstallPackages() {
     has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
 
     # root package managerでインストールする諸々
-    installPackage emacs
     installPackage peco
     installPackage pkg-config
     installPackage tmux
