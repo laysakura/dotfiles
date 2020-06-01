@@ -17,7 +17,7 @@ function installPackage() {
     if is_linux; then
         if is_ubuntu; then
             logInfo "Installing $package ..."
-            sudo apt install -y $package
+            sudo apt-get install -y $package
         else
             logWarn 'Linux package installation is only supported in Ubuntu'
         fi
@@ -45,7 +45,8 @@ function installRootPackageManager() {
         # $HOME/.hommebrew にHomebrewをインストール
         has brew || curl -L https://gist.githubusercontent.com/kenchan0130/b2b5fec12a8f5e08bb9a3556e2d8bcca/raw | ruby
     elif is_ubuntu; then
-        has apt  # assertion
+        has apt-get  # assertion
+        sudo apt-get update
     else
         die "Not implemented yet"
     fi
@@ -74,8 +75,8 @@ function runInstallPackages() {
             installPackage go
         elif is_ubuntu; then
             sudo add-apt-repository ppa:longsleep/golang-backports
-            sudo apt update
-            sudo apt install golang-go
+            sudo apt-get update
+            sudo apt-get install -y golang-go
         fi
     fi
 
