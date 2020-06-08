@@ -9,6 +9,7 @@ function is_ubuntu() { grep 'DISTRIB_ID=Ubunt' /etc/lsb-release > /dev/null 2>&1
 function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
 function is_msys() { [[ `uname` == MSYS* ]]; }  # workaround: ostypeが空文字列返す時がある...
+function has_x11() { xdpyinfo > /dev/null 2>&1 ; }
 
 # logger
 function logError() {

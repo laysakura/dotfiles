@@ -61,7 +61,7 @@ if is_osx; then
 fi
 
 # xkb
-if is_linux; then
+if is_linux && has_x11 ; then
     cpDeep $basedir/.xkb $HOME/
     cat > $HOME/.config/autostart/xkb.desktop <<EOS
 [Desktop Entry]
