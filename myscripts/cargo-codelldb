@@ -31,14 +31,16 @@ function run() {
 
     mkdir -p .cargo
 
-    cat >> .cargo/config <<'EOF'
+    cp .cargo/config .cargo/config.bak || :
+
+    cat > .cargo/config <<'EOF'
 [target.x86_64-apple-darwin]
 runner = ".cargo/codelldb"
 EOF
 
     cat > .cargo/codelldb <<'EOF'
 #!/bin/bash
-code --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
+code-insiders --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
 EOF
     chmod +x .cargo/codelldb
 
