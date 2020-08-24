@@ -12,4 +12,4 @@ alias tn='terminal-notifier -sound default -message'
 
 alias code='code-insiders'
 
-alias actdk='~/.ghq/src/github.com/Idein/actdk/target/debug/actdk'
+alias actdk='~/.ghq/src/github.com/Idein/actdk-package/target/debug/actdk'
