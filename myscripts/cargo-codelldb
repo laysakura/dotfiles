@@ -40,7 +40,7 @@ EOF
 
     cat > .cargo/codelldb <<'EOF'
 #!/bin/bash
-code-insiders --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
+code --open-url "vscode://vadimcn.vscode-lldb/launch/command?LD_LIBRARY_PATH=$LD_LIBRARY_PATH&$*"
 EOF
     chmod +x .cargo/codelldb
 
