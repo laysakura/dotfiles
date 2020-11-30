@@ -89,12 +89,6 @@ elif is_osx; then
     cpDeep $basedir/.RubyMine2016.2/rubymine.vmoptions $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
 fi
 
-# Visual Studio Code
-if is_osx; then
-    mkdir -p "$HOME/Library/Application Support/Code"
-    cp -r $basedir/vscode/User "$HOME/Library/Application Support/Code"
-fi
-
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
 
