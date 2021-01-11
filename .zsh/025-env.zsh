@@ -39,7 +39,7 @@ test -e $HOME/.cargo/env && . $HOME/.cargo/env
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+has rbenv && eval "$(rbenv init -)"
 
 # golang
 [ "$GOROOT" ]
