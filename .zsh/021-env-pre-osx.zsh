@@ -19,3 +19,4 @@ eval "$(pyenv init -)"
 
 # golang
 export GOROOT=/usr/local/Cellar/go/1.15.5/libexec
+mkdir -p $GOROOT
