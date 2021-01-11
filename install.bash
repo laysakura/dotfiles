@@ -125,6 +125,9 @@ function run() {
     logInfo "Placing dotfiles ..."
     . $supportDir/installDotfiles.sh
 
+    # locale設定
+    is_ubuntu && sudo localedef -f UTF-8 -i ja_JP ja_JP
+
     # 利用するソフトウェアのインストール
     logInfo "Installing packages"
     . $supportDir/installPackages.sh
