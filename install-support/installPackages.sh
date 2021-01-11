@@ -105,8 +105,6 @@ function runInstallPackages() {
     fi
 
     # ubuntu専用パッケージのインストール
-    if is_ubuntu; then
-    fi
 
     # msys専用パッケージのインストール
     is_msys && (has winpty || installPackage winpty)  # winpty (minttyでinteractive modeにするためのワークアラウンド)
