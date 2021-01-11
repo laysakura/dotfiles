@@ -17,7 +17,7 @@ declare -A SITE_USER=(
 )
 
 declare -A REPO_DOTFILES_SECRET=(
-    [site]='bitbucket'
+    [site]='github'
     [name]='laysakura/dotfiles-secret'
 )
 
