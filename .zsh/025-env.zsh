@@ -42,7 +42,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # golang
-export GOROOT=/usr/local/Cellar/go/1.15.5/libexec
+[ "$GOROOT" ]
 mkdir -p $GOROOT
 export GOPATH=$HOME/.ghq
 export PATH=$GOROOT/bin:$GOPATH/bin:$PATH

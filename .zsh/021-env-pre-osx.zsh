@@ -16,3 +16,6 @@ export JAVA_HOME=`/System/Library/Frameworks/JavaVM.framework/Versions/A/Command
 
 # Python (pyenv is supposed to be installed via homebrew)
 eval "$(pyenv init -)"
+
+# golang
+export GOROOT=/usr/local/Cellar/go/1.15.5/libexec
