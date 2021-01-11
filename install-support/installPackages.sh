@@ -63,6 +63,7 @@ function runInstallPackages() {
     installPackage binutils
     installPackage autoconf
     is_osx || installPackage unzip
+    is_ubuntu || installPackage python-is-python3
 
     # 途中でコケたときの復旧とか楽にするため、配置済みの .zsh/ は読んでくれるzshを先んじてインストール
     installPackage zsh
