@@ -17,7 +17,7 @@ declare -A SITE_USER=(
 )
 
 declare -A REPO_DOTFILES_SECRET=(
-    [site]='bitbucket'
+    [site]='github'
     [name]='laysakura/dotfiles-secret'
 )
 
@@ -63,8 +63,8 @@ function dbusUnityMagic() {
         fi
     done
     if [[ "${PID}" == "" ]]; then
-        echo "Could not detect active login session"
-        return 1
+        logInfo "Could not detect active login session"
+        return 0
     fi
 
     QUERY_ENVIRON="$(tr '\0' '\n' < /proc/${PID}/environ | grep "DBUS_SESSION_BUS_ADDRESS" | cut -d "=" -f 2-)"
@@ -115,8 +115,8 @@ function run() {
 
     # 一回だけ実行すれば良いもの(冪等性は必要)
     is_ubuntu && dbusUnityMagic
-    is_ubuntu && gsettings set org.gnome.settings-daemon.plugins.keyboard active false  # fcitx切り替えの際にxkbキーバインドが戻らないようにする
-    is_ubuntu && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs          # 操作を全体的にEmacs風に
+    is_ubuntu && gsettings set org.gnome.settings-daemon.plugins.keyboard active false || :  # fcitx切り替えの際にxkbキーバインドが戻らないようにする
+    is_ubuntu && gsettings set org.gnome.desktop.interface gtk-key-theme Emacs || :          # 操作を全体的にEmacs風に
 
     # dotfiles-secretをdotfilesにマージ
     gitCopy $dotfilesSecretDir $dotfilesDir HEAD
@@ -124,6 +124,9 @@ function run() {
     # 設定ファイルの配置
     logInfo "Placing dotfiles ..."
     . $supportDir/installDotfiles.sh
+
+    # locale設定
+    is_ubuntu && sudo localedef -f UTF-8 -i ja_JP ja_JP
 
     # 利用するソフトウェアのインストール
     logInfo "Installing packages"

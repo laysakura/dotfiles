@@ -63,6 +63,7 @@ function runInstallPackages() {
     installPackage binutils
     installPackage autoconf
     is_osx || installPackage unzip
+    is_ubuntu || installPackage python-is-python3
 
     # 途中でコケたときの復旧とか楽にするため、配置済みの .zsh/ は読んでくれるzshを先んじてインストール
     installPackage zsh
@@ -80,14 +81,6 @@ function runInstallPackages() {
         fi
     fi
 
-    # emacs cask
-    installPackage emacs
-    has cask || curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
-
-    has ghq || go get github.com/motemen/ghq
-
-    has rustc || (curl https://sh.rustup.rs -sSf | sh)  # rustに付属するcargo
-
     # root package managerでインストールする諸々
     installPackage peco
     installPackage pkg-config
@@ -97,12 +90,6 @@ function runInstallPackages() {
     installPackage watch
     installPackage wget
     installPackage zplug
-
-    # caskでインストール
-    (
-        cd $HOME/.emacs.d
-        cask install
-    )
 
     # osx専用パッケージのインストール
     if is_osx; then
@@ -118,12 +105,6 @@ function runInstallPackages() {
     fi
 
     # ubuntu専用パッケージのインストール
-    if is_ubuntu; then
-        (isPackageInstalled fonts-inconsolata || installPackage fonts-inconsolata)
-        (has unity-tweak-tool || installPackage unity-tweak-tool)
-        (has xclip || installPackage xclip)
-        (has goldendict || installPackage goldendict)
-    fi
 
     # msys専用パッケージのインストール
     is_msys && (has winpty || installPackage winpty)  # winpty (minttyでinteractive modeにするためのワークアラウンド)
