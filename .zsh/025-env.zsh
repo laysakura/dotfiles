@@ -28,6 +28,9 @@ export LESS='-i -M -R -W -x4'
 # rust
 export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
 
+# poetry
+export PATH=$HOME/.poetry/bin:$PATH
+
 # emacs cask
 export PATH=$HOME/.cask/bin:$PATH
 
