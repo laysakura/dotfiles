@@ -7,12 +7,10 @@ declare -a DEPENDENCIES=(
 )
 
 declare -A SITE_URL=(
-    [bitbucket]='bitbucket.org'
     [github]='github.com'
 )
 
 declare -A SITE_USER=(
-    [bitbucket]='laysakura'
     [github]='laysakura'
 )
 
