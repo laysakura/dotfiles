@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Usage: echo '2021-12-31 23:59:59' |privatetime
+
+read line
+
+year=$(date -jf '%F %T' "$line" '+%Y')
+month=$(date -jf '%F %T' "$line" '+%m')
+date_=$(date -jf '%F %T' "$line" '+%d')
+hour=$(date -jf '%F %T' "$line" '+%H')
+minute=$(date -jf '%F %T' "$line" '+%M')
+second=$(date -jf '%F %T' "$line" '+%S')
+
+if [ 9 -le $hour -a $hour -le 18 ] ; then
+    hour=21
+    minute=13
+    second=51
+fi
+
+echo "${year}-${month}-${date_} ${hour}:${minute}:${second}"
