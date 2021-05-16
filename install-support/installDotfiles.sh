@@ -72,23 +72,6 @@ X-GNOME-Autostart-enabled=true
 EOS
 fi
 
-# IntelliJ
-if is_linux; then
-    cpDeep $basedir/IdeaIC2017.3 $HOME/
-elif is_osx; then
-    mkdir -p $HOME/Library/Preferences/IdeaIC2017.3
-    cpDeep $basedir/IdeaIC2017.3/idea.vmoptions $HOME/Library/Preferences/IdeaIC2017.3/idea.vmoptions
-    cpDeep $basedir/IdeaIC2017.3/settings.jar $HOME/Library/Preferences/IdeaIC2017.3/settings.jar
-fi
-
-# RubyMine
-if is_linux; then
-    cpDeep $basedir/.RubyMine2016.2 $HOME/
-elif is_osx; then
-    mkdir -p $HOME/Library/Preferences/RubyMine2016.2
-    cpDeep $basedir/.RubyMine2016.2/rubymine.vmoptions $HOME/Library/Preferences/RubyMine2016.2/rubymine.vmoptions
-fi
-
 # GoldenDict
 cpDeep $basedir/.goldendict $HOME/
 
