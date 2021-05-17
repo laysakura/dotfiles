@@ -35,22 +35,11 @@ cpDeep $basedir/.cargo $HOME/
 cpDeep $basedir/.sbt $HOME/
 cpDeep $basedir/.sbtrc $HOME/
 
-# ruby
-cpDeep $basedir/.pryrc $HOME/
-
 # python
 cpDeep $basedir/.pypirc $HOME/
-cpDeep $basedir/.theanorc $HOME/
-cpDeep $basedir/.matplotlib $HOME/
-
-# octave
-cpDeep $basedir/.octaverc $HOME/
 
 # gdb
 cpDeep $basedir/.gdbinit $HOME/
-
-# mysql
-cpDeep $basedir/.my.cnf $HOME/
 
 # .config
 cpDeep $basedir/.config $HOME/
@@ -71,9 +60,6 @@ Type=Application
 X-GNOME-Autostart-enabled=true
 EOS
 fi
-
-# GoldenDict
-cpDeep $basedir/.goldendict $HOME/
 
 # 雑多なスクリプト
 mkdir -p $HOME/usr/local/bin/
