@@ -35,9 +35,6 @@ export PATH=$HOME/.poetry/bin:$PATH
 # emacs cask
 export PATH=$HOME/.cask/bin:$PATH
 
-# java
-# export PATH=$JAVA_HOME/bin:$PATH
-
 # rust
 test -e $HOME/.cargo/env && . $HOME/.cargo/env
 
