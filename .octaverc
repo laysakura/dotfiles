@@ -1,4 +1,0 @@
-PS1('>> ');
-
-setenv ("GNUTERM", "qt");  % terminal to draw graph
-more off;  % turn off pagination
