@@ -48,10 +48,3 @@ export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # node-js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# Papilio-Loader
-export PATH=/Applications/GadgetFactory/Papilio-Loader/Java-GUI/programmer/macosx:$PATH
-
-# jetson
-export PATH=/usr/local/cuda-10.2/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda-10.2/lib64:${LD_LIBRARY_PATH:-}
