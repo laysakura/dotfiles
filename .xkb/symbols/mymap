@@ -4,4 +4,6 @@ xkb_symbols "swapkeys" {
 
   replace key <LCTL>  { [ Caps_Lock ] };
   replace key <CAPS> { [ Control_L ] };
+
+  replace key <AE13>  { [ grave, asciitilde ] };
 };
