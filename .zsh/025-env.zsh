@@ -42,7 +42,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 has rbenv && eval "$(rbenv init -)"
 
 # golang
-[ "$GOROOT" ]
 export GOPATH=$HOME/.ghq
 
 # node-js
