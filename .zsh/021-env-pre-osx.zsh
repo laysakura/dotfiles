@@ -1,7 +1,7 @@
 is_osx || return 0
 
 # Homebrew
-export BREWPATH=$HOME/.homebrew
+export BREWPATH=/opt/homebrew
 export PATH=$BREWPATH/bin:$PATH
 export PATH=$BREWPATH/sbin:$PATH
 export MANPATH=$BREWPATH/share/man:${MANPATH:-}
