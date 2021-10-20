@@ -1,5 +1,5 @@
 if is_osx; then
-  source /usr/local/opt/zplug/init.zsh
+  source ~/.zplug/init.zsh
 elif is_linux; then
   source /usr/share/zplug/init.zsh
 fi
