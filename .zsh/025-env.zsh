@@ -44,7 +44,6 @@ has rbenv && eval "$(rbenv init -)"
 # golang
 [ "$GOROOT" ]
 export GOPATH=$HOME/.ghq
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
 
 # node-js
 export PATH=$HOME/.nodebrew/current/bin:$PATH

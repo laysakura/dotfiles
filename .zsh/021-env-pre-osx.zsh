@@ -16,7 +16,3 @@ ssh-add -K ~/.ssh/id_rsa_github_nopass
 
 # Python (pyenv is supposed to be installed via homebrew)
 eval "$(pyenv init -)"
-
-# golang
-export GOROOT=/usr/local/Cellar/go/1.15.5/libexec
-mkdir -p $GOROOT
