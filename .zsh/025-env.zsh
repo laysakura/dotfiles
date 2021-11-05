@@ -43,6 +43,7 @@ has rbenv && eval "$(rbenv init -)"
 
 # golang
 export GOPATH=$HOME/.ghq
+export PATH=$GOPATH/bin:$PATH
 
 # node-js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
