@@ -30,7 +30,7 @@ HOME_BIN=$HOME/.bin
 function repoUrl() {
     local repoSite=$1
     local repoName=$2
-    echo -n "https://${SITE_URL[$repoSite]}/$repoName.git"
+    echo -n "git@${SITE_URL[$repoSite]}:$repoName.git"
 }
 function has() {
     type "$1" >/dev/null 2>&1
