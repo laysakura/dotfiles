@@ -72,7 +72,6 @@ function dbusUnityMagic() {
         echo "DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}"
     else
         echo "Could not find dbus session ID in user environment."
-        return 1
     fi
 
     return 0
