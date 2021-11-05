@@ -62,5 +62,5 @@ EOS
 fi
 
 # 雑多なスクリプト
-mkdir -p $HOME/usr/local/bin/
+mkdir -p $HOME/.local/bin/
 cp -p $basedir/myscripts/* $HOME/.local/bin/
