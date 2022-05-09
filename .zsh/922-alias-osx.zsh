@@ -10,4 +10,4 @@ alias sed='gsed'
 
 alias tn='terminal-notifier -sound default -message'
 
-alias actdk='~/.ghq/src/github.com/Idein/actdk-package/actdk/target/debug/actdk'
+alias python='python3'
