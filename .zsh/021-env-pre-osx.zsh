@@ -16,3 +16,11 @@ ssh-add -K ~/.ssh/id_rsa_github_nopass
 
 # Python (pyenv is supposed to be installed via homebrew)
 eval "$(pyenv init -)"
+
+# MacTeX
+eval "$(/usr/libexec/path_helper)"
+
+# SDKman
+set +u
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+set -u
