@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -xeu
+set -xe
 
 # 設定
 declare -a DEPENDENCIES=(

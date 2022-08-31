@@ -21,6 +21,4 @@ eval "$(pyenv init -)"
 eval "$(/usr/libexec/path_helper)"
 
 # SDKman
-set +u
 source "$HOME/.sdkman/bin/sdkman-init.sh"
-set -u
