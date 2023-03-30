@@ -47,3 +47,6 @@ export PATH=$GOPATH/bin:$PATH
 
 # node-js
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# protobuf
+export PROTOC_INCLUDE=/usr/local/include
