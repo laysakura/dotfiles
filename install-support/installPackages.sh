@@ -73,8 +73,11 @@ function runInstallPackages() {
     if ! has go; then
         if is_osx; then
             installPackage go
-        elif is_ubuntu || is_kali; then
+        elif is_ubuntu; then
             sudo add-apt-repository ppa:longsleep/golang-backports
+            sudo apt-get update
+            sudo apt-get install -y golang-go
+        elif is_kali; then
             sudo apt-get update
             sudo apt-get install -y golang-go
         fi
