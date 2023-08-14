@@ -123,7 +123,7 @@ function run() {
     . $supportDir/installDotfiles.sh
 
     # locale設定
-    is_ubuntu && sudo localedef -f UTF-8 -i ja_JP ja_JP
+    (is_ubuntu || is_kali) && sudo localedef -f UTF-8 -i ja_JP ja_JP
 
     # 利用するソフトウェアのインストール
     logInfo "Installing packages"

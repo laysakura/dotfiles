@@ -6,6 +6,7 @@ function upcase() { tr "[:lower:]" "[:upper:]"; }
 function ostype() { uname| downcase; }
 function is_linux() { [[ `ostype` == linux* ]]; }
 function is_ubuntu() { grep 'DISTRIB_ID=Ubunt' /etc/lsb-release > /dev/null 2>&1 ; }
+function is_kali() { uname -a |grep 'Linux kali' > /dev/null 2>&1 ; }
 function is_osx() { [[ `ostype` == darwin* ]]; }
 function is_bsd() { [[ `ostype` == bsd* ]]; }
 function is_msys() { [[ `uname` == MSYS* ]]; }  # workaround: ostypeが空文字列返す時がある...
@@ -74,7 +75,7 @@ function gitCopy() {
 # Package
 function isPackageInstalled() {
     local package=$1
-    if is_ubuntu; then
+    if is_ubuntu || is_kali; then
         dpkg -l |grep $package > /dev/null 2>&1
     elif is_osx; then
         brew list |grep $package > /dev/null 2>&1

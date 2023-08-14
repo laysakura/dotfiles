@@ -15,7 +15,7 @@ function installPackage() {
     local package=$1
 
     if is_linux; then
-        if is_ubuntu; then
+        if is_ubuntu || is_kali; then
             logInfo "Installing $package ..."
             sudo apt-get install -y $package
         else
@@ -44,7 +44,7 @@ function installRootPackageManager() {
     if is_osx; then
         # $HOME/.hommebrew にHomebrewをインストール
         has brew || curl -L https://gist.githubusercontent.com/kenchan0130/b2b5fec12a8f5e08bb9a3556e2d8bcca/raw | ruby
-    elif is_ubuntu; then
+    elif is_ubuntu || is_kali; then
         has apt-get  # assertion
         sudo apt-get update
     else
@@ -73,7 +73,7 @@ function runInstallPackages() {
     if ! has go; then
         if is_osx; then
             installPackage go
-        elif is_ubuntu; then
+        elif is_ubuntu || is_kali; then
             sudo add-apt-repository ppa:longsleep/golang-backports
             sudo apt-get update
             sudo apt-get install -y golang-go
