@@ -37,6 +37,9 @@ export PATH=$HOME/.cask/bin:$PATH
 # rust
 test -e $HOME/.cargo/env && . $HOME/.cargo/env
 
+# python
+export PATH=$HOME/Library/Python/3.9/bin:$PATH
+
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
 has rbenv && eval "$(rbenv init -)"
