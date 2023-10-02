@@ -175,3 +175,6 @@ fabric.properties
 
 # CodeTour
 .tours/
+
+# Golang
+__debug_bin*
