@@ -8,5 +8,5 @@ alias graphicsmagick='gm'
 alias deleteLocalBranch="git branch --merged main | grep -vE '^\*|main$|develop/.+$' | xargs -I % git branch -d %"
 
 mkd() {
-	mkdir $1 && cd $1
+	mkdir -p $1 && cd $1
 }
