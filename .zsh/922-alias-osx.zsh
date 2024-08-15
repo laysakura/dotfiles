@@ -9,5 +9,3 @@ alias l='ls -FG'
 alias sed='gsed'
 
 alias tn='terminal-notifier -sound default -message'
-
-alias python='python3'
