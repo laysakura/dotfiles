@@ -99,8 +99,6 @@ function runInstallPackages() {
         installPackage gnu-sed
         installPackage terminal-notifier
         installPackage readline
-
-        brew tap homebrew/services
     fi
 
     # ubuntu専用パッケージのインストール
