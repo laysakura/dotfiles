@@ -27,9 +27,6 @@ export LANG=en_US.UTF-8
 # less
 export LESS='-i -M -R -W -x4'
 
-# rust
-export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
-
 # poetry
 export PATH=$HOME/.poetry/bin:$PATH
 
@@ -38,6 +35,7 @@ export PATH=$HOME/.cask/bin:$PATH
 
 # rust
 test -e $HOME/.cargo/env && . $HOME/.cargo/env
+export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
 
 # python
 export PATH=$HOME/Library/Python/3.9/bin:$PATH
@@ -49,6 +47,10 @@ has rbenv && eval "$(rbenv init -)"
 # golang
 export GOPATH=$HOME/.ghq
 export PATH=$GOPATH/bin:$PATH
+
+# pnpm
+export PNPM_HOME=$HOME/Library/pnpm
+export PATH=$PNPM_HOME:$PATH
 
 # node-js
 export PATH=$HOME/.nodebrew/current/bin:$PATH

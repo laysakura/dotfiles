@@ -99,14 +99,23 @@ function runInstallPackages() {
         installPackage gnu-sed
         installPackage terminal-notifier
         installPackage readline
-
-        brew tap homebrew/services
     fi
 
     # ubuntu専用パッケージのインストール
 
     # msys専用パッケージのインストール
     is_msys && (has winpty || installPackage winpty)  # winpty (minttyでinteractive modeにするためのワークアラウンド)
+
+    # tcopy (osc52.sh) のインストール
+    if [ ! -f "$HOME/.local/bin/tcopy" ]; then
+        logInfo "Installing tcopy (osc52.sh) ..."
+        mkdir -p "$HOME/.local/bin"
+        curl -L https://raw.githubusercontent.com/libapps/libapps-mirror/main/hterm/etc/osc52.sh -o "$HOME/.local/bin/tcopy"
+        chmod +x "$HOME/.local/bin/tcopy"
+        logOk "tcopy installed to $HOME/.local/bin/tcopy"
+    else
+        logInfo "tcopy already exists at $HOME/.local/bin/tcopy"
+    fi
 
     :
 }

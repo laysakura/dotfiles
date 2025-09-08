@@ -19,6 +19,3 @@ eval "$(pyenv init -)"
 
 # MacTeX
 eval "$(/usr/libexec/path_helper)"
-
-# SDKman
-source "$HOME/.sdkman/bin/sdkman-init.sh"
