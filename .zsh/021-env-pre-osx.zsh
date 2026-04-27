@@ -14,8 +14,4 @@ export HOMEBREW_NO_ANALYTICS=1
 # ssh-agent
 ssh-add -K ~/.ssh/id_rsa_github_nopass
 
-# Python (pyenv is supposed to be installed via homebrew)
-eval "$(pyenv init -)"
-
-# MacTeX
-eval "$(/usr/libexec/path_helper)"
+# Python: pyenv init is in 050-pyenv-osx.zsh (must run after all PATH additions)

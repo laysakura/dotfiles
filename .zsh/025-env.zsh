@@ -37,8 +37,6 @@ export PATH=$HOME/.cask/bin:$PATH
 test -e $HOME/.cargo/env && . $HOME/.cargo/env
 export RUST_SRC_PATH=$HOME/.ghq/src/github.com/rust-lang/rust/src
 
-# python
-export PATH=$HOME/Library/Python/3.9/bin:$PATH
 
 # ruby
 export PATH="$HOME/.rbenv/bin:$PATH"
