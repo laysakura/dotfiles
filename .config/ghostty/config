@@ -1,0 +1,71 @@
+# cmux / Ghostty terminal appearance
+# iTerm2 の "Default" プロファイルから移行した見た目設定。
+# 変更後は `cmux reload-config` で反映される。
+
+# --- フォント (iTerm2: HackGenConsoleNF-Regular 11pt) ---
+font-family = HackGen Console NF
+font-size = 11
+# iTerm2 と同じ macOS フォントスムージングで描画 (無効だと白文字が細くかすれて見える)
+font-thicken = true
+
+# --- 基本色 (iTerm2: 黒背景・白文字・透過 30%) ---
+background = #000000
+foreground = #ffffff
+background-opacity = 0.7
+
+# --- カーソル (iTerm2: ブロック・非点滅) ---
+cursor-style = block
+cursor-style-blink = false
+# シェル統合がプロンプトでカーソルを縦棒に上書きするのを止める (cursor 以外の統合機能は維持)
+shell-integration-features = no-cursor
+# 白ブロック + 下の文字は黒反転 (視認性優先)
+cursor-color = #ffffff
+cursor-text = #000000
+
+# --- 選択範囲 ---
+selection-background = #b3d7ff
+selection-foreground = #000000
+
+# --- ANSI 16 色 (iTerm2 の配色をそのまま移植) ---
+palette = 0=#14191e
+palette = 1=#f0937d
+palette = 2=#00c200
+palette = 3=#f0ee73
+palette = 4=#a5aacb
+palette = 5=#e7adf2
+palette = 6=#00c5c7
+palette = 7=#c7c7c7
+palette = 8=#686868
+palette = 9=#ed7769
+palette = 10=#58e790
+palette = 11=#fef779
+palette = 12=#a7abf2
+palette = 13=#e17ee1
+palette = 14=#60fdff
+palette = 15=#ffffff
+
+# 太字を明色で表示 (iTerm2: Use Bright Bold)
+bold-is-bright = true
+
+# --- キーボード: 左右の Option を Meta キーにする (iTerm2: Option Key Sends Esc+) ---
+macos-option-as-alt = true
+
+# --- スクロールバック (iTerm2: 無制限 / tmux: 100000 行相当) ---
+# Ghostty はバイト数指定。100MB 確保。
+scrollback-limit = 100000000
+
+# --- ペインリサイズ (tmux: bind -r H/J/K/L resize-pane 5) ---
+# prefix (C-t) 側の操作は cmux 本体が持っている (~/.config/cmux/cmux.json)。
+# cmux はアプリ層で C-t を先に消費するため、ここで ctrl+t シーケンスを書いても
+# 動かない。よってリサイズは prefix 無しの直接キーに割り当てる。
+#
+# 単位はセル数ではなくレイアウト座標のピクセル (縦は約 10 で 1 行)。
+# 動作は「今のペインをその向きに広げる」。画面端側は無反応なので、縮めたい場合は
+# 反対側のペインに移って広げるか、Karabiner ルール
+# (~/.config/karabiner/assets/complex_modifications/cmux-tmux-resize.json) を
+# 有効にする。有効化すると同じキーが ~/bin/cmux-resize 経由になり、
+# tmux と同じく「どちらのペインからでも」効くようになる。
+keybind = ctrl+shift+h=resize_split:left,40
+keybind = ctrl+shift+j=resize_split:down,60
+keybind = ctrl+shift+k=resize_split:up,60
+keybind = ctrl+shift+l=resize_split:right,40

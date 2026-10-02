@@ -1,0 +1,39 @@
+{
+  "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+  "schemaVersion": 1,
+
+  // ターミナルが常時ブラック背景 (~/.config/ghostty/config) なので、
+  // サイドバー等もダークで統一する (iTerm2 時代の見た目に合わせる)
+  "app": {
+    "appearance": "dark"
+  },
+
+  "terminal": {
+    // iTerm2 の「選択しただけでコピー」相当 (tmux でも pbcopy 連携していた)
+    "copyOnSelect": true
+  },
+
+  // tmux の prefix C-t 操作。cmux はアプリ層で C-t を先に受け取るので、
+  // ここに定義したものが優先される (Ghostty 側の ctrl+t シーケンスは無効になる)。
+  // ペインのリサイズだけは cmux にアクションが無いため、prefix を使わない
+  // Ctrl+Shift+H/J/K/L を Ghostty 側 (~/.config/ghostty/config) に置いている。
+  "shortcuts": {
+    "bindings": {
+      // コピーモード (tmux: prefix [)
+      "toggleTerminalCopyMode": ["ctrl+t", "["],
+      // ペイン分割 (tmux: bind 2 / bind 3)
+      "splitDown": ["ctrl+t", "2"],
+      "splitRight": ["ctrl+t", "3"],
+      // ペイン選択 (tmux: bind C-n / C-p select-pane)
+      "focusNextPane": ["ctrl+t", "ctrl+n"],
+      "focusPreviousPane": ["ctrl+t", "ctrl+p"],
+      // ズーム / 均等化
+      "toggleSplitZoom": ["ctrl+t", "z"],
+      "equalizeSplits": ["ctrl+t", "="],
+      // ウィンドウ = cmux のタブ (tmux: bind c / n / p)
+      "newSurface": ["ctrl+t", "c"],
+      "nextSurface": ["ctrl+t", "n"],
+      "prevSurface": ["ctrl+t", "p"]
+    }
+  }
+}
