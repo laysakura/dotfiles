@@ -1,0 +1,443 @@
+{
+  "title": "Orca tmux prefix",
+  "rules": [
+    {
+      "description": "Orca: tmux-style Ctrl+t prefix (dotfiles)",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f13",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f14",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f15",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f16",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "z",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f17",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "equal_sign",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f18",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "c",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f19",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "n",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f20",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "p",
+            "modifiers": {
+              "mandatory": []
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "f21",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            },
+            {
+              "key_code": "t",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "escape"
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 0
+              }
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            },
+            {
+              "type": "variable_if",
+              "name": "orca_tmux_prefix",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "t",
+            "modifiers": {
+              "mandatory": [
+                "control"
+              ]
+            }
+          },
+          "to": [
+            {
+              "set_variable": {
+                "name": "orca_tmux_prefix",
+                "value": 1
+              }
+            }
+          ],
+          "to_delayed_action": {
+            "to_if_invoked": [
+              {
+                "set_variable": {
+                  "name": "orca_tmux_prefix",
+                  "value": 0
+                }
+              }
+            ]
+          },
+          "parameters": {
+            "basic.to_delayed_action_delay_milliseconds": 1200
+          },
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com\\.stablyai\\.orca$"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

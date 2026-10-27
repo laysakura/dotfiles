@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "platforms": {
+    "darwin": {
+      "terminal.splitDown": [
+        "Mod+Shift+D",
+        "Ctrl+F13"
+      ],
+      "terminal.splitRight": [
+        "Mod+D",
+        "Ctrl+F14"
+      ],
+      "terminal.focusNextPane": [
+        "Mod+BracketRight",
+        "Ctrl+F15"
+      ],
+      "terminal.focusPreviousPane": [
+        "Mod+BracketLeft",
+        "Ctrl+F16"
+      ],
+      "terminal.expandPane": [
+        "Mod+Shift+Enter",
+        "Ctrl+F17"
+      ],
+      "terminal.equalizePaneSizes": [
+        "Ctrl+F18"
+      ],
+      "tab.newTerminal": [
+        "Mod+T",
+        "Ctrl+F19"
+      ],
+      "tab.nextTerminal": [
+        "Ctrl+PageDown",
+        "Ctrl+F20"
+      ],
+      "tab.previousTerminal": [
+        "Ctrl+PageUp",
+        "Ctrl+F21"
+      ]
+    }
+  }
+}
