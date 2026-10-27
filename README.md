@@ -8,7 +8,7 @@ curl https://raw.githubusercontent.com/laysakura/dotfiles/master/install.bash |b
 
 cmuxから移行した設定の原本は `.config/orca/` に置く。Orca 1.4.242 / macOSで確認。
 
-- `settings.json`: ダーク表示、HackGen Console NF 11pt、黒背景・白文字・背景不透明度0.7、ANSI 16色、非点滅ブロックカーソル、選択時コピー、OptionをMetaとして扱う設定、50,000行のスクロールバック。
+- `settings.json`: ダーク表示、HackGen Console NF 11pt、黒背景・白文字・端末背景不透明度0.7（macOSではデスクトップ透過にならない。下記参照）、ANSI 16色、非点滅ブロックカーソル、選択時コピー、OptionをMetaとして扱う設定、50,000行のスクロールバック。
 - `keybindings.json`: Orcaのアクションとショートカットの対応。標準キーに加えてKarabinerからの内部キー `Ctrl+F13`〜`Ctrl+F21` を受け取る。
 - `karabiner.json`: Orcaが最前面のときだけ `Ctrl+t` prefixを処理するKarabinerルール。
 - `apply.py`: 起動済みプロファイルの設定へ上記をマージし、Karabinerの選択中プロファイルにルールを有効化する。既存設定のバックアップは `~/.local/state/orca-dotfiles/` に保存する。
@@ -34,6 +34,8 @@ Orcaのアプリ設定は `~/Library/Application Support/Orca/profiles/local-def
 | `Ctrl+t` → `Esc` | prefix解除 |
 
 prefixの待機時間は1.2秒。cmuxの `Ctrl+t [` コピーモード、Emacs風の選択操作、`Ctrl+Shift+H/J/K/L` リサイズはOrcaに対応アクションがないため未移行。選択はマウス、コピーは選択時の自動コピーまたは `Cmd+C`、検索は `Cmd+F`、リサイズは分割境界のドラッグを使う。Ghosttyの100MBスクロールバックはOrca上限の50,000行に対応付けた。Ghostty固有のフォントスムージングなど、描画エンジンによる差は残る。
+
+Orca 1.4.242のmacOS版はメインウィンドウを不透明な背景色で生成しており、`terminalBackgroundOpacity = 0.7` は端末描画の背景にのみ作用する。cmuxのように背後のデスクトップや別ウィンドウを透かすことは、現行の設定では再現できない。`windowBackgroundBlur` もこの版ではWindowsのacrylicにのみ接続されており、macOSの透過を有効にする設定ではない。
 
 ## cmux（旧設定）
 
